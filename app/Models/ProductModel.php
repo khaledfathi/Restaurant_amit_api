@@ -14,6 +14,7 @@ class ProductModel extends Model
         'restaurant_id',
         'name',
         'image', 
+        'quantity',
         'price',
         'discount'
     ];

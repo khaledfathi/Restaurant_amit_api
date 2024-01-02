@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class HistoryOrderRequestsModel extends Model
 {
     use HasFactory;
-    public $table = 'order_requests'; 
+    public $table = 'history_order_requests'; 
     protected $fillable = [
         'order_id', 
-        'product_id',
         'quantity',
+        'product_name',
+        'price',
+        'discount',
+        'image'
     ];
 }
