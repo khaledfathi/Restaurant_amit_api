@@ -17,7 +17,7 @@ class UserRepository implements UserRepositoryContract {
     }
 
     function index(){
-        return UserModel::hydrate($this->queryGetWithBaseURLAttached())->first(); 
+        return UserModel::hydrate($this->queryGetWithBaseURLAttached()); 
     }
 
     function show (int $id){
