@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\API\ProductCategoryController;
+use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\RestaurantCategoriesController;
 use App\Http\Controllers\API\ResturantController;
 use App\Http\Controllers\API\UserController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,4 +45,18 @@ Route::prefix('/restaurant')->group(function () {
     Route::delete('/{id}' , [ResturantController::class , 'destroy']); 
     //filter 
     Route::get('/filter-by-category/{id}' , [ResturantController::class , 'filterByCategory']); 
+});
+Route::prefix('/product-category')->group(function () {
+    Route::get('/' , [ProductCategoryController::class , 'index']); 
+    Route::get('/{id}' , [ProductCategoryController::class , 'show']); 
+    Route::post('' , [ProductCategoryController::class , 'store']); 
+    Route::post('/update/{id}' , [ProductCategoryController::class , 'update']); 
+    Route::delete('/{id}' , [ProductCategoryController::class , 'destroy']); 
+});
+Route::prefix('/product')->group(function () {
+    Route::get('/' , [ProductController::class , 'index']); 
+    Route::get('/{id}' , [ProductController::class , 'show']); 
+    Route::post('' , [ProductController::class , 'store']); 
+    Route::post('/update/{id}' , [ProductController::class , 'update']); 
+    Route::delete('/{id}' , [ProductController::class , 'destroy']); 
 });

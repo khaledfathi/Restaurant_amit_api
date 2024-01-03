@@ -11,3 +11,9 @@ define ('DEFAULT_RESTAURANT_CATEGORY_IMAGE' , 'restaurant_category_default_image
 //restaurent 
 define ('RESTAURANT_IMAGES_STORAGE' , 'restaurant_images'); 
 define ('DEFAULT_RESTAURANT_IMAGE' , 'restaurant_default_image.png'); 
+//product categories 
+define ('PRODUCT_CATEGORY_IMAGES_STORAGE' , 'product_category_images'); 
+define ('DEFAULT_PRODUCT_CATEGORY_IMAGE' , 'product_category_default_image.png'); 
+//product 
+define ('PRODUCT_IMAGES_STORAGE' , 'product_images'); 
+define ('DEFAULT_PRODUCT_IMAGE' , 'product_default_image.png'); 

@@ -4,56 +4,49 @@ namespace App\Http\Controllers\API;
 
 use App\Helper\Helper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\API\ProductCategory\StoreProductCategoryRequest;
+use App\Http\Requests\API\ProductCategory\UpdateProductCategoryRequest;
 use App\Http\Requests\API\QueryParameter\IdRequest;
-use App\Http\Requests\API\Restaurant\StoreRestaurantRequest;
-use App\Http\Requests\API\Restaurant\UpdateRestaurantRequest;
-use App\Repository\contracts\RestaurantRepositoryContract;
+use App\Repository\contracts\ProductCategoryRepositoryContract;
 use Illuminate\Support\Facades\Storage;
 
-class ResturantController extends Controller
+class ProductCategoryController extends Controller
 {
-    private RestaurantRepositoryContract $restaurantProvider; 
+        private ProductCategoryRepositoryContract $productCategoryProvider; 
     public function __construct(
-        RestaurantRepositoryContract $restaurantProvider 
+        ProductCategoryRepositoryContract $productCategoryProvider 
     ){
-        $this->restaurantProvider = $restaurantProvider;   
+        $this->productCategoryProvider = $productCategoryProvider;   
     }
-
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $records = $this->restaurantProvider->index(); 
+        $records = $this->productCategoryProvider->index(); 
         return response()->json($records);
     }
 
     // /**
     //  * Store a newly created resource in storage.
     //  */
-    public function store(StoreRestaurantRequest $request)
+    public function store(StoreProductCategoryRequest $request)
     {
-        // dd($request->all()); 
          //prepeare data
         $data = [
-            'restaurant_category_id'=>$request->restaurant_category_id,
             'name' => $request->name,
-            'phone' => $request->phone,
-            'address'=>$request->address, 
-            'lat'=>$request->lat,
-            'long'=>$request->long
         ];
         //check if there's image
         $imageFile = $request->file('image');
         if ($imageFile) {
             //upload file and get its name 
-            $data['image'] = Helper::uploadImage($imageFile, RESTAURANT_IMAGES_STORAGE);
+            $data['image'] = Helper::uploadImage($imageFile, PRODUCT_CATEGORY_IMAGES_STORAGE);
         } else {
             //get default image file name
-            $data['image'] = DEFAULT_RESTAURANT_IMAGE;
+            $data['image'] = DEFAULT_PRODUCT_CATEGORY_IMAGE;
         }
         //store data 
-        $record = $this->restaurantProvider->store($data);
+        $record = $this->productCategoryProvider->store($data);
         $record['operation'] = true;
         return response()->json($record); 
     }
@@ -63,31 +56,31 @@ class ResturantController extends Controller
     //  */
     public function show(IdRequest $request)
     {
-        $record = $this->restaurantProvider->show($request->id);
+        $record = $this->productCategoryProvider->show($request->id);
         return response()->json($record); 
     }
 
     // /**
     //  * Update the specified resource in storage.
     //  */
-    public function update(UpdateRestaurantRequest $request)
+    public function update(UpdateProductCategoryRequest $request)
     {
         //prepeare data 
         $data = $request->all();
 
         //check if there's new image
         $imageFile = $request->file('image');
-        $record = $this->restaurantProvider->showNoUrl($request->id); //current record
+        $record = $this->productCategoryProvider->showNoUrl($request->id); //current record
         if ($record && $imageFile) { 
             //upload new image 
-            $data['image'] = Helper::uploadImage($imageFile, RESTAURANT_IMAGES_STORAGE);
+            $data['image'] = Helper::uploadImage($imageFile, PRODUCT_CATEGORY_IMAGES_STORAGE);
             //remove old image if not default use image 
-            if ( $record->image != DEFAULT_RESTAURANT_IMAGE) { 
-                Storage::delete(RESTAURANT_IMAGES_STORAGE.'/'.$record->image); 
+            if ( $record->image != DEFAULT_PRODUCT_CATEGORY_IMAGE) { 
+                Storage::delete(PRODUCT_CATEGORY_IMAGES_STORAGE.'/'.$record->image); 
             }
         }
         //update 
-        if ($this->restaurantProvider->update($data, $request->id)) {
+        if ($this->productCategoryProvider->update($data, $request->id)) {
             return response()->json(['operation' => true]);
         } else {
             return response()->json(['operation' => false, 'msg' => "user not found"]);
@@ -100,22 +93,16 @@ class ResturantController extends Controller
     public function destroy(IdRequest $request)
     {
         //delete image file 
-        $record = $this->restaurantProvider->showNoUrl($request->id);
+        $record = $this->productCategoryProvider->showNoUrl($request->id);
         if ($record) {
-            Storage::delete(RESTAURANT_IMAGES_STORAGE . '/' . $record->image);
+            Storage::delete(PRODUCT_CATEGORY_IMAGES_STORAGE . '/' . $record->image);
         }
         //delete user 
-        $found = $this->restaurantProvider->destroy($request->id);
+        $found = $this->productCategoryProvider->destroy($request->id);
         if ($found) {
             return response()->json(['operation' => true]);
         }
         return response()->json(['operation' => false, 'msg' => "user not found"]);
 
-    } 
-
-    //FLITERS 
-    public function filterByCategory(IdRequest $request){
-        $records = $this->restaurantProvider->filterByCategory($request->id); 
-        return response()->json($records);
     }
 }

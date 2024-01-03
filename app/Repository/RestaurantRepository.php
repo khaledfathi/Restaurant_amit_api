@@ -3,7 +3,6 @@ namespace App\Repository;
 use App\Models\RestaurantModel;
 use App\Repository\contracts\RestaurantRepositoryContract;
 use Illuminate\Support\Facades\DB;
-use URL; 
 
 class RestaurantRepository implements RestaurantRepositoryContract {
 

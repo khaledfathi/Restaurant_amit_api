@@ -3,7 +3,6 @@ namespace App\Repository;
 use App\Repository\contracts\UserRepositoryContract;
 use App\Models\User as UserModel;
 use Illuminate\Support\Facades\DB;
-use URL; 
 
 class UserRepository implements UserRepositoryContract {
 
