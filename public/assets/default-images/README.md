@@ -1,0 +1,1 @@
+# default images will not work untill you  copy these image to linked directory public/storage/user_images before run the server

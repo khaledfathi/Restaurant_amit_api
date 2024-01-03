@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name',255)->nullable(false);
             $table->string('email',255)->nullable(false)->unique();
             $table->text('password')->nullable(false);
-            $table->text('image')->nullable(false)->default('/assets/default-images/user_default_image.jpg');
+            $table->text('image')->nullable(false)->default('default-images/user_default_image.jpg');
             $table->rememberToken();
             $table->timestamps();
         });

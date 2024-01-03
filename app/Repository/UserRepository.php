@@ -13,7 +13,7 @@ class UserRepository implements UserRepositoryContract {
         if ($id != null ){
             $query ="SELECT id , name , email , CONCAT( ? , image) as image FROM users WHERE id = $id";  
         }
-        return  DB::select($query , [url('/').'/'.STORAGE_ROOT]); 
+        return  DB::select($query , [url('/').'/'.STORAGE_ROOT.'/'.USER_IMAGES_STORAGE.'/']); 
     }
 
     function index(){

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Helper\Helper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\API\QueryParameter\IdRequest;
 use App\Http\Requests\API\User\StoreUserRequest;
 use App\Http\Requests\API\User\UpdateUserRequest;
 use App\Repository\contracts\UserRepositoryContract;
@@ -38,10 +39,14 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ]; 
-        //check image
+        //check if there's image
         $imageFile =  $request->file('image'); 
         if ($imageFile){
+            //upload file and get its name 
             $data['image'] = Helper::uploadImage($imageFile , USER_IMAGES_STORAGE);
+        }else {
+            //get default image file name
+            $data['image'] = DEFAULT_USER_IMAGE;
         }
         //store data 
         $record = $this->userProvider->store($data);
@@ -52,11 +57,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request)
+    public function show(IdRequest $request)
     {
         $record = $this->userProvider->show($request->id);
         return response()->json($record); 
-
     }
 
     /**
@@ -66,14 +70,16 @@ class UserController extends Controller
     {        
         //prepeare data 
         $data = $request->all(); 
-        //check image
+        //check if there's new image
         $imageFile =  $request->file('image'); 
         if ($imageFile){
             //upload new image 
             $data['image'] = Helper::uploadImage($imageFile , USER_IMAGES_STORAGE);
-            //remove old image 
-            $oldImage = $this->userProvider->show($request->id)->first()->image; 
-            Storage::delete($oldImage);
+            //remove old image if not default use image 
+            $oldImage = $this->userProvider->show($request->id)->image; 
+            if ( ! Helper::isDefaultUserImage($oldImage) ) {
+                Storage::delete($oldImage);
+            }
             //update 
             $this->userProvider->update($data , $request->id); 
         }
@@ -87,7 +93,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request)
+    public function destroy(IdRequest $request)
     {
         $found = $this->userProvider->destroy($request->id) ;
         if ($found) {
