@@ -9,7 +9,4 @@ class Helper {
         return  $fileName;
 
     }
-    static public function isDefaultUserImage (String $path ){
-        return  $path == url('/').'/'.STORAGE_ROOT.'/'.USER_IMAGES_STORAGE.'/'.DEFAULT_USER_IMAGE ; 
-    }
 }

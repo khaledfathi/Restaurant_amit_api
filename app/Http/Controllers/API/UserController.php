@@ -8,23 +8,22 @@ use App\Http\Requests\API\QueryParameter\IdRequest;
 use App\Http\Requests\API\User\StoreUserRequest;
 use App\Http\Requests\API\User\UpdateUserRequest;
 use App\Repository\contracts\UserRepositoryContract;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    private UserRepositoryContract $userProvider; 
+    private UserRepositoryContract $userProvider;
     public function __construct(
         UserRepositoryContract $userProvider
-    ){
-        $this->userProvider = $userProvider;   
+    ) {
+        $this->userProvider = $userProvider;
     }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $records = $this->userProvider->index(); 
+        $records = $this->userProvider->index();
         return response()->json($records);
     }
 
@@ -38,19 +37,19 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
-        ]; 
+        ];
         //check if there's image
-        $imageFile =  $request->file('image'); 
-        if ($imageFile){
+        $imageFile = $request->file('image');
+        if ($imageFile) {
             //upload file and get its name 
-            $data['image'] = Helper::uploadImage($imageFile , USER_IMAGES_STORAGE);
-        }else {
+            $data['image'] = Helper::uploadImage($imageFile, USER_IMAGES_STORAGE);
+        } else {
             //get default image file name
             $data['image'] = DEFAULT_USER_IMAGE;
         }
         //store data 
         $record = $this->userProvider->store($data);
-        $record['operation'] = true;   
+        $record['operation'] = true;
         return response()->json($record);
     }
 
@@ -60,33 +59,34 @@ class UserController extends Controller
     public function show(IdRequest $request)
     {
         $record = $this->userProvider->show($request->id);
-        return response()->json($record); 
+        return response()->json($record);
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdateUserRequest $request)
-    {        
+    {
         //prepeare data 
-        $data = $request->all(); 
+        $data = $request->all();
+
         //check if there's new image
-        $imageFile =  $request->file('image'); 
-        if ($imageFile){
+        $imageFile = $request->file('image');
+        $record = $this->userProvider->showNoUrl($request->id); //current record
+        if ($record && $imageFile) { 
             //upload new image 
-            $data['image'] = Helper::uploadImage($imageFile , USER_IMAGES_STORAGE);
+            $data['image'] = Helper::uploadImage($imageFile, USER_IMAGES_STORAGE);
             //remove old image if not default use image 
-            $oldImage = $this->userProvider->show($request->id)->image; 
-            if ( ! Helper::isDefaultUserImage($oldImage) ) {
-                Storage::delete($oldImage);
+            if ( $record->image != DEFAULT_USER_IMAGE) { 
+                Storage::delete(USER_IMAGES_STORAGE.'/'.$record->image); 
             }
-            //update 
-            $this->userProvider->update($data , $request->id); 
         }
-        if ($this->userProvider->update($data , $request->id)){
-            return response()->json (['operation'=> true]); 
-        }else {
-            return response()->json (['operation'=> false , 'msg'=>"user not found"]); 
+
+        //update 
+        if ($this->userProvider->update($data, $request->id)) {
+            return response()->json(['operation' => true]);
+        } else {
+            return response()->json(['operation' => false, 'msg' => "user not found"]);
         }
     }
 
@@ -95,11 +95,17 @@ class UserController extends Controller
      */
     public function destroy(IdRequest $request)
     {
-        $found = $this->userProvider->destroy($request->id) ;
-        if ($found) {
-            return response()->json (['operation'=> true]); 
+        //delete image file 
+        $record = $this->userProvider->showNoUrl($request->id);
+        if ($record) {
+            Storage::delete(USER_IMAGES_STORAGE . '/' . $record->image);
         }
-        return response()->json (['operation'=> false , 'msg'=>"user not found"]); 
+        //delete user 
+        $found = $this->userProvider->destroy($request->id);
+        if ($found) {
+            return response()->json(['operation' => true]);
+        }
+        return response()->json(['operation' => false, 'msg' => "user not found"]);
 
     }
 }

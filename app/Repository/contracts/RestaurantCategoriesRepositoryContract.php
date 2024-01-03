@@ -1,7 +1,7 @@
 <?php
 namespace App\Repository\contracts; 
 
-interface  UserRepositoryContract {
+interface  RestaurantCategoriesRepositoryContract {
     public function index(); 
     public function store(array $data);
     function showNoUrl (int $id);

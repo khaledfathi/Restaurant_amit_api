@@ -169,7 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         // custom providers 
-        App\Providers\UserRepositoryProvider::class, 
+        App\Providers\RepositoryServiceProvider::class, 
     ])->toArray(),
 
     /*

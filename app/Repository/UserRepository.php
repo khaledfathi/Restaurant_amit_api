@@ -20,6 +20,9 @@ class UserRepository implements UserRepositoryContract {
         return UserModel::hydrate($this->queryGetWithBaseURLAttached()); 
     }
 
+    function showNoUrl (int $id){
+        return UserModel::where('id', $id)->first();
+    }
     function show (int $id){
         return UserModel::hydrate($this->queryGetWithBaseURLAttached($id))->first(); 
     }
