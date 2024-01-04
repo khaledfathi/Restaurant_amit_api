@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('history_order_requests', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity')->nullable(false);
+            $table->integer('product_id')->nullable(false);
             $table->string('product_name',255)->nullable(false);
             $table->double('price')->nullable(false);
             $table->double('discount')->nullable(false);

@@ -24,8 +24,9 @@ class ProductRepository implements ProductRepositoryContract
 
     function queryGetWithBaseURLAttached(int $id = null)
     {
+        $query = $this->query;
         if ($id != null) {
-            $this->query .= " WHERE products.id = $id";
+            $query .= " WHERE products.id = $id";
         }
         return DB::select($this->query, [url('/') . '/' . STORAGE_ROOT . '/' . PRODUCT_IMAGES_STORAGE . '/']);
     }

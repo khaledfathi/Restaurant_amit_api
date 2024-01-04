@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ProductCategoryController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\RestaurantCategoriesController;
@@ -63,4 +64,14 @@ Route::prefix('/product')->group(function () {
     Route::get('/filter-by-category/{id}' , [ProductController::class , 'filterByCategory']); 
     Route::get('/filter-by-restaurant/{id}' , [ProductController::class , 'filterByRestaurant']); 
     Route::get('/filter-by-category/{category_id}/and-restaurant/{restaurant_id}' , [ProductController::class , 'filterByCategoryAndRestaurant']); 
+});
+
+Route::prefix('/order')->group(function () {
+    Route::get('/' , [OrderController::class , 'index']); 
+    Route::get('/{id}' , [OrderController::class , 'show']); 
+    Route::post('' , [OrderController::class , 'store']); 
+    // Route::post('/update/{id}' , [OrderController::class , 'update']); 
+    Route::delete('/{id}' , [OrderController::class , 'destroy']); 
+    //filters 
+    Route::get('/filter-by-user/{id}' , [OrderController::class , 'filterByUser']); 
 });

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OrdersModel extends Model
+class OrderModel extends Model
 {
     use HasFactory;
     public $table = 'orders'; 
@@ -13,5 +13,9 @@ class OrdersModel extends Model
         'user_id',
         'time', 
         'status',    
+    ];
+    protected $hidden = [
+        'created_at',
+        'updated_at'
     ];
 }

@@ -12,6 +12,7 @@ class HistoryOrderRequestsModel extends Model
     protected $fillable = [
         'order_id', 
         'quantity',
+        'product_id',
         'product_name',
         'price',
         'discount',

@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Requests\API\Product;
+namespace App\Http\Requests\API\Order;
 
+use App\Enum\OrderStatus;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\Rules\Enum;
 
-class UpdateProductRequest extends FormRequest
+class StoreOrderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,13 +25,15 @@ class UpdateProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'product_category_id' => 'nullable|numeric|exists:product_categories,id', 
-            'restaurant_id'=> 'nullable|numeric|exists:restaurants,id', 
-            'name'=>'nullable', 
-            'quantity'=>'nullable', 
-            'price'=>'nullable',
-            'discount'=>'nullable',
-            'image'=>'nullable|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000',
+            'user_id' => 'required|numeric|exists:users,id',
+            'products'=>'required',
+            'time' =>'nullable|date', 
+            'status' => ['nullable' ,  new Enum(OrderStatus::class)],
+        ];
+    }
+    public function messages(){
+        return [
+            'products'=>'products should has at least 1 item',
         ];
     }
     public function failedValidation(\Illuminate\Contracts\Validation\Validator $validator) {
