@@ -8,6 +8,7 @@ use App\Http\Requests\API\Product\StoreProductRequest;
 use App\Http\Requests\API\Product\UpdateProductRequest;
 use App\Http\Requests\API\QueryParameter\IdRequest;
 use App\Repository\contracts\ProductRepositoryContract;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -110,7 +111,21 @@ class ProductController extends Controller
             return response()->json(['operation' => true]);
         }
         return response()->json(['operation' => false, 'msg' => "user not found"]);
-
     } 
 
+    // FILTERS
+    public function filterByCategory (IdRequest $request){
+        $record = $this->productProvider->filterByCategory($request->id);
+        return response()->json($record); 
+    }
+
+    public function filterByRestaurant (Request $request){
+        $record = $this->productProvider->filterByRestaurant($request->id);
+        return response()->json($record); 
+    }
+    public function filterByCategoryAndRestaurant (Request $request){
+        $record = $this->productProvider->filterByCategoryAndRestaurant($request->category_id , $request->restaurant_id);
+        return response()->json($record); 
+
+    }
 }

@@ -43,7 +43,7 @@ Route::prefix('/restaurant')->group(function () {
     Route::post('' , [ResturantController::class , 'store']); 
     Route::post('/update/{id}' , [ResturantController::class , 'update']); 
     Route::delete('/{id}' , [ResturantController::class , 'destroy']); 
-    //filter 
+    //filters
     Route::get('/filter-by-category/{id}' , [ResturantController::class , 'filterByCategory']); 
 });
 Route::prefix('/product-category')->group(function () {
@@ -59,4 +59,8 @@ Route::prefix('/product')->group(function () {
     Route::post('' , [ProductController::class , 'store']); 
     Route::post('/update/{id}' , [ProductController::class , 'update']); 
     Route::delete('/{id}' , [ProductController::class , 'destroy']); 
+    //filters
+    Route::get('/filter-by-category/{id}' , [ProductController::class , 'filterByCategory']); 
+    Route::get('/filter-by-restaurant/{id}' , [ProductController::class , 'filterByRestaurant']); 
+    Route::get('/filter-by-category/{category_id}/and-restaurant/{restaurant_id}' , [ProductController::class , 'filterByCategoryAndRestaurant']); 
 });

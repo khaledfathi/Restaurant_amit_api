@@ -8,4 +8,9 @@ interface  ProductRepositoryContract{
     public function show(int $id);
     public function update(array $data, int $id);
     public function destroy(int $id);
+
+    //FILTERS  
+    public function filterByCategory(int $id); 
+    public function filterByRestaurant (int $id);
+    public function filterByCategoryAndRestaurant (int $category_id , int $restaurant_id); 
 }
