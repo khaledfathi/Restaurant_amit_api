@@ -1,0 +1,2 @@
+- first do ./artisan storage:link
+- copy these directories to public/storage/
