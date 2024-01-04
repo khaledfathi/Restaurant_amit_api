@@ -79,9 +79,10 @@ class ProductController extends Controller
             //upload new image 
             $data['image'] = Helper::uploadImage($imageFile, PRODUCT_IMAGES_STORAGE);
             //remove old image if not default use image 
-            if ( $record->image != DEFAULT_PRODUCT_IMAGE) { 
-                Storage::delete(PRODUCT_IMAGES_STORAGE.'/'.$record->image); 
-            }
+            
+            // if ( $record->image != DEFAULT_PRODUCT_IMAGE) { 
+            //     Storage::delete(PRODUCT_IMAGES_STORAGE.'/'.$record->image); 
+            // }
         }
         //update 
         if ($this->productProvider->update($data, $request->id)) {
@@ -97,10 +98,12 @@ class ProductController extends Controller
     public function destroy(IdRequest $request)
     {
         //delete image file 
-        $record = $this->productProvider->showNoUrl($request->id);
-        if ($record) {
-            Storage::delete(PRODUCT_IMAGES_STORAGE . '/' . $record->image);
-        }
+        
+        // $record = $this->productProvider->showNoUrl($request->id);
+        // if ($record) {
+        //     Storage::delete(PRODUCT_IMAGES_STORAGE . '/' . $record->image);
+        // }
+
         //delete user 
         $found = $this->productProvider->destroy($request->id);
         if ($found) {
