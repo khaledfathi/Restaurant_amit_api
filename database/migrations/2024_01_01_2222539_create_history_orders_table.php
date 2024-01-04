@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->datetime('time')->nullable(false); 
             $table->enum('status',['in progress' , 'complete'])->nullable(false);
+            $table->double('total')->nullable(false)->default(0); 
             $table->timestamps();
             //FK
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();            

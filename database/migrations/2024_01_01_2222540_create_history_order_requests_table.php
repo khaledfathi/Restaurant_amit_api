@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('product_name',255)->nullable(false);
             $table->double('price')->nullable(false);
             $table->double('discount')->nullable(false);
+            $table->double('total')->nullable(false)->default(0); 
             $table->string('image')->nullable(false);
             $table->timestamps();
             //FK
