@@ -14,4 +14,9 @@ class OrderRequestsModel extends Model
         'product_id',
         'quantity'
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
 }

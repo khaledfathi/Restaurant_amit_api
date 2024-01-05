@@ -18,20 +18,20 @@ use Illuminate\Support\Facades\Validator;
 class OrderController extends Controller
 {
     private OrderRepositoryContract $orderProvider;
-    private OrderRequestsRepositoryContract $orderRequestsProvider ;
-    private HistoryOrderRepositoryContract $historyOrderProvider; 
-    private HistoryOrderRequestsRepositoryContract $historyOrderRequestsProvider; 
-    private ProductRepositoryContract $productProvider ; 
+    private OrderRequestsRepositoryContract $orderRequestsProvider;
+    private HistoryOrderRepositoryContract $historyOrderProvider;
+    private HistoryOrderRequestsRepositoryContract $historyOrderRequestsProvider;
+    private ProductRepositoryContract $productProvider;
     public function __construct(
         OrderRepositoryContract $orderProvider,
-        OrderRequestsRepositoryContract $orderRequestsProvider ,
+        OrderRequestsRepositoryContract $orderRequestsProvider,
         HistoryOrderRepositoryContract $historyOrderProvider,
         HistoryOrderRequestsRepositoryContract $historyOrderRequestsProvider,
         ProductRepositoryContract $productProvider,
     ) {
         $this->orderProvider = $orderProvider;
-        $this->orderRequestsProvider = $orderRequestsProvider; 
-        $this->historyOrderProvider = $historyOrderProvider; 
+        $this->orderRequestsProvider = $orderRequestsProvider;
+        $this->historyOrderProvider = $historyOrderProvider;
         $this->historyOrderRequestsProvider = $historyOrderRequestsProvider;
         $this->productProvider = $productProvider;
     }
@@ -40,7 +40,7 @@ class OrderController extends Controller
     //  */
     public function index()
     {
-        $records = $this->orderProvider->index();
+        $records = $this->historyOrderProvider->index();
         return response()->json($records);
     }
 
@@ -49,6 +49,7 @@ class OrderController extends Controller
     //  */
     public function store(StoreOrderRequest $request)
     {
+        /*************** nested validation *******************/
         //nested validation for products 
         $products = $request->products;
         foreach ($products as $product) {
@@ -67,77 +68,77 @@ class OrderController extends Controller
                 ], 200);
             }
         }
+        /******************************************************/
 
-        //prepeare data for order
-        $data = [
+        /********************* Create order **************************/
+        //prepeare data for order_table
+        $orderData = [
             'user_id' => $request->user_id,
-            'products' => $request->products,
             'time' => Carbon::now()->toDateTimeString(),
             'status' => OrderStatus::InProgress->value,
         ];
-       
         //store order data on orders_table
-        $orderRecord = $this->orderProvider->store($data);
-       
+        $orderRecord = $this->orderProvider->store($orderData);
         //store order_requests on order_requests releated to this order
         foreach ($products as $product) {
-            $product['order_id'] = $orderRecord->id; 
-            $this->orderRequestsProvider->store($product); 
+            $product['order_id'] = $orderRecord->id;
+            $this->orderRequestsProvider->store($product);
         }
-        
+        /************************************************************/
+
+        /***************** Create history order *******************/
         //store history_order on history_orders table
         $historyOrderData = [
-            'user_id'=>$orderRecord->user_id,
-            'status'=>$orderRecord->status,
-            'order_id'=>$orderRecord->id, 
-            'time'=>$orderRecord->time
+            'user_id' => $orderRecord->user_id,
+            'status' => $orderRecord->status,
+            'time' => $orderRecord->time,
+            'total' => 0,
         ];
-        $historyOrderRecord = $this->historyOrderProvider->store($historyOrderData); 
-
-        //store history_order_requests on history_order_requests table releated to this history_order 
+        $historyOrderRecord = $this->historyOrderProvider->store($historyOrderData);
+        //prepearing date  for products inside order  
+        $productsFullData = [];
+        $overAllPrice = 0;
         foreach ($products as $key => $product) {
             $productRecord = $this->productProvider->show($product['product_id']);
-            $data = [
-                'quantity'=>$product['quantity'],
-                'order_id'=>$historyOrderRecord->id, 
-                'product_id'=>$product['product_id'],
-                'product_name'=>$productRecord->name, 
-                'price'=> $productRecord->price, 
-                'discount'=>$productRecord->discount, 
-                'image'=>$productRecord->image,
+            $total = ($productRecord->price - $productRecord->discount) * $product['quantity'];
+            $overAllPrice += $total;
+            $productData = [
+                'order_id' => $historyOrderRecord->id,
+                'product_id' => $productRecord->id,
+                'product_name' => $productRecord->name,
+                'restaurant_id' => $productRecord->restaurant_id,
+                'restaurant_name' => $productRecord->restaurant_name,
+                'quantity' => $product['quantity'],
+                'price' => $productRecord->price,
+                'discount' => $productRecord->discount,
+                'image' => $productRecord->image,
+                'total' => $total
             ];
-            $this->historyOrderRequestsProvider->store($data); 
-        }
-        /**********************************************************/
-        //perpearing all information will be returned for this order
-        $historyOrderRequstesRecord = $this->historyOrderRequestsProvider->filterByOrderId($historyOrderRecord->id); 
-        $fullDataProductsOnOrder= []; 
-        $overAllPrice=0; 
-        foreach ($historyOrderRequstesRecord as $key => $orderRequest) {
-            $total =  (($orderRequest->price)-($orderRequest->discount))*$orderRequest->quantity; 
-            $overAllPrice += $total; 
-            array_push($fullDataProductsOnOrder, [
-                'product_id' => $orderRequest->product_id, 
-                'product_name' => $orderRequest->product_name, 
-                'quantity' => $orderRequest->quantity,
-                'price' => $orderRequest->price, 
-                'discount' => $orderRequest->discount, 
-                'image' => $orderRequest->image, 
-                'total'=> $total, 
-            ]); 
+            array_push($productsFullData, $productData);
         }
 
-        //response record data 
-        $fullDataHistoryOrder = [
-            'operation'=>true,
-            'id' => $historyOrderRecord->id,
-            'time' => $historyOrderRecord->time, 
-            'total'=>$overAllPrice,
-            'products'=> $fullDataProductsOnOrder,
-        ]; 
+        //store history_order_requests on history_order_requests table releated to this history_order 
+        foreach ($productsFullData as $key => $product) {
+            $this->historyOrderRequestsProvider->store($product);
+        }
 
-        $record['operation'] = true;
-        return response()->json($fullDataHistoryOrder);
+        //update total price in history order
+        $this->historyOrderProvider->update(['total' => $overAllPrice], $historyOrderRecord->id);
+        /************************************************************/
+
+        /********************* Prepearing Response data ************************/
+        $record = $this->historyOrderProvider->show($historyOrderRecord->id);
+        $response = [
+            'id' => $record->id,
+            'user_id' => $record->user_id,
+            'status' => $record->status,
+            'time' => $record->time,
+            'total' => $record->total,
+            'products' => $productsFullData,
+        ];
+        /************************************************************/
+
+        return response()->json($response);
     }
 
     // /**
@@ -169,7 +170,23 @@ class OrderController extends Controller
     }
 
     //filters 
-    public function filterByUser(IdRequest $request){
-        
+    public function filterByUser(IdRequest $request)
+    {
+        $response =[]; 
+        $historyOrderRecords = $this->historyOrderProvider->filterByUserId($request->id);
+        foreach ($historyOrderRecords as $key => $historyOrder) {
+            //history order_requests for this order 
+            $historyOrderRequestsRecord = $this->historyOrderRequestsProvider->filterByOrderId($historyOrder->id);
+            $record = [
+                'id'=>$historyOrder->id,
+                'user_id'=>$historyOrder->user_id,
+                'status'=>$historyOrder->status,
+                'time'=>$historyOrder->time,
+                'total'=>$historyOrder->total, 
+                'products' => $historyOrderRequestsRecord,
+            ];
+            array_push($response , $record); 
+        }
+        return response()->json($response);
     }
 }

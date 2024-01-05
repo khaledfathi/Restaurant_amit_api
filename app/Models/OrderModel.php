@@ -12,7 +12,7 @@ class OrderModel extends Model
     protected $fillable = [
         'user_id',
         'time', 
-        'status',    
+        'status',
     ];
     protected $hidden = [
         'created_at',

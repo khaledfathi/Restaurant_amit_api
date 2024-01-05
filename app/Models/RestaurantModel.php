@@ -18,4 +18,9 @@ class RestaurantModel extends Model
        'lat',
        'long'
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
 }

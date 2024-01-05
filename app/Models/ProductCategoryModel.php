@@ -13,5 +13,8 @@ class ProductCategoryModel extends Model
         'name',
         'image'
     ];
-
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
 }

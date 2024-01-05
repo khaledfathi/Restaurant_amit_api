@@ -9,10 +9,11 @@ class HistoryOrdersModel extends Model
 {
     use HasFactory;
     public $table = 'history_orders';
-    protected $fillable = [
+    protected $fillable = [        
         'user_id',
         'time',
-        'status',        
+        'status', 
+        'total'
     ];
 
     protected $hidden = [

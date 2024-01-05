@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('history_order_requests', function (Blueprint $table) {
             $table->id();
+            $table->integer('restaurant_id')->nullable(false);
+            $table->string('restaurant_name',255)->nullable(false);
             $table->integer('quantity')->nullable(false);
             $table->integer('product_id')->nullable(false);
             $table->string('product_name',255)->nullable(false);

@@ -18,4 +18,9 @@ class ProductModel extends Model
         'price',
         'discount'
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
 }

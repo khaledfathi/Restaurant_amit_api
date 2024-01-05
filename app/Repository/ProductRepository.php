@@ -28,7 +28,7 @@ class ProductRepository implements ProductRepositoryContract
         if ($id != null) {
             $query .= " WHERE products.id = $id";
         }
-        return DB::select($this->query, [url('/') . '/' . STORAGE_ROOT . '/' . PRODUCT_IMAGES_STORAGE . '/']);
+        return DB::select($query, [url('/') . '/' . STORAGE_ROOT . '/' . PRODUCT_IMAGES_STORAGE . '/']);
     }
 
     function index()
@@ -48,8 +48,8 @@ class ProductRepository implements ProductRepositoryContract
     {
         //store new record
         $record = ProductModel::create($data);
+        $id = $record->id ;
         //custom result
-        $id = $record['id'];
         return ProductModel::hydrate($this->queryGetWithBaseURLAttached($id))->first();
     }
     public function update(array $data, int $id)

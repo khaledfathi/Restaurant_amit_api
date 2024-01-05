@@ -29,7 +29,7 @@ class HistoryOrderRepository implements HistoryOrderRepositoryContract {
     }
     //FILTERS
     
-    public function filterByOrderId(int $id){
+    public function filterByUserId(int $id){
         return HistoryOrdersModel::where('user_id', $id)->get(); 
     }
 }
