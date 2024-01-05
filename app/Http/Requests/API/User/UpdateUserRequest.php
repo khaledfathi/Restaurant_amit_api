@@ -21,20 +21,23 @@ class UpdateUserRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
 
-     public function rules(): array
-     {
-         return [
-             'name' => 'nullable', 
-             'email' =>'nullable|email|unique:users,email,'.$this->id,
-             'password'=>'nullable',
-             'image'=>'nullable|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000',
-         ];
-     }
-     public function failedValidation(\Illuminate\Contracts\Validation\Validator $validator) {
-         throw new HttpResponseException(response()->json([
-             'operation' => false,
-             'msg'=>'one or more fileds is invalid !',
-             'errors' => $validator->errors()->all(),
-         ], 200));   
-     }
+    public function rules(): array
+    {
+        $this->merge(['id'=>$this->id]);
+        return [
+            'id'=> 'numeric',
+            'name' => 'nullable',
+            'email' => 'nullable|email|unique:users,email,' . $this->id,
+            'password' => 'nullable',
+            'image' => 'nullable|mimes:jpg,jpge,bmp,png,tiff,webp,heif|max:10000',
+        ];
+    }
+    public function failedValidation(\Illuminate\Contracts\Validation\Validator $validator)
+    {
+        throw new HttpResponseException(response()->json([
+            'operation' => false,
+            'msg' => 'one or more fileds is invalid !',
+            'errors' => $validator->errors()->all(),
+        ], 200));
+    }
 }

@@ -17,3 +17,9 @@ define ('DEFAULT_PRODUCT_CATEGORY_IMAGE' , 'product_category_default_image.png')
 //product 
 define ('PRODUCT_IMAGES_STORAGE' , 'product_images'); 
 define ('DEFAULT_PRODUCT_IMAGE' , 'product_default_image.png'); 
+
+
+//admin
+define('ADMIN_EMAIL' , 'admin@mail.com'); 
+define('ADMIN_PROTECTION_MESSAGE' , 'Not allowed : admin user is protected');
+define('ADMIN_ONLY_MESSAGE' , 'unauthorized , admin only can do this operation');

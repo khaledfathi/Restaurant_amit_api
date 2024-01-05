@@ -67,18 +67,23 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request)
     {
+        //admin protection
+        if (Helper::isAdmin($request->id)) {
+            return response()->json(['operation' => false, 'msg' => ADMIN_PROTECTION_MESSAGE]);
+        }
+
         //prepeare data 
         $data = $request->all();
 
         //check if there's new image
         $imageFile = $request->file('image');
         $record = $this->userProvider->showNoUrl($request->id); //current record
-        if ($record && $imageFile) { 
+        if ($record && $imageFile) {
             //upload new image 
             $data['image'] = Helper::uploadImage($imageFile, USER_IMAGES_STORAGE);
             //remove old image if not default use image 
-            if ( $record->image != DEFAULT_USER_IMAGE) { 
-                Storage::delete(USER_IMAGES_STORAGE.'/'.$record->image); 
+            if ($record->image != DEFAULT_USER_IMAGE) {
+                Storage::delete(USER_IMAGES_STORAGE . '/' . $record->image);
             }
         }
 
@@ -95,6 +100,10 @@ class UserController extends Controller
      */
     public function destroy(IdRequest $request)
     {
+        //admin protection
+        if (Helper::isAdmin($request->id)) {
+            return response()->json(['operation' => false, 'msg' => ADMIN_PROTECTION_MESSAGE]);
+        }
         //delete image file 
         $record = $this->userProvider->showNoUrl($request->id);
         if ($record) {

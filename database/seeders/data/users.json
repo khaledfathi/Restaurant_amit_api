@@ -1,0 +1,47 @@
+[
+    {
+      "name": "admin",
+      "email": "admin@mail.com",
+      "password": "admin" 
+    },
+    {
+      "name": "khaled",
+      "email": "khaled@mail.com",
+      "password": 123
+    },
+    {
+      "name": "ahmed",
+      "email": "ahmed@mail.com",
+      "password": 123
+    },
+    {
+      "name": "ali",
+      "email": "ali@mail.com",
+      "password": 123
+    },
+    {
+      "name": "amira",
+      "email": "amira@mail.com",
+      "password": 123
+    },
+    {
+      "name": "samy",
+      "email": "samy@mail.com",
+      "password": 123
+    },
+    {
+      "name": "mona",
+      "email": "mona@mail.com",
+      "password": 123
+    },
+    {
+      "name": "karim",
+      "email": "karim@mail.com",
+      "password": 123
+    },
+    {
+      "name": "islam",
+      "email": "islam@mail.com",
+      "password": 123
+    }
+  ]

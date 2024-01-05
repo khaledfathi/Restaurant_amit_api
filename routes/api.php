@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\OrderController;
 use App\Http\Controllers\API\ProductCategoryController;
 use App\Http\Controllers\API\ProductController;
@@ -19,59 +20,79 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::middleware(['json.response',])->group(function () {
+    // USERS
+    Route::prefix('/user')->group(function () {
+        Route::get('/', [UserController::class, 'index']);
+        Route::get('/{id}', [UserController::class, 'show']);
+        Route::post('', [UserController::class, 'store']);
+        Route::post('/update/{id}', [UserController::class, 'update']);
+        Route::delete('/{id}', [UserController::class, 'destroy'])->middleware(['auth:sanctum' , 'abilities:admin']); //accress by admin only
+    });
 
+    //RESTAURANTS CATEGORIES
+    Route::prefix('/restaurant-category')->group(function () {
+        Route::get('/', [RestaurantCategoriesController::class, 'index']);
+        Route::get('/{id}', [RestaurantCategoriesController::class, 'show']);
+        Route::middleware(['auth:sanctum' , 'abilities:admin'])->group(function () {
+            Route::post('', [RestaurantCategoriesController::class, 'store']);
+            Route::post('/update/{id}', [RestaurantCategoriesController::class, 'update']);
+            Route::delete('/{id}', [RestaurantCategoriesController::class, 'destroy']);
+        });
+    });
 
-Route::prefix('/user')->group(function () {
-    Route::get('/' , [UserController::class , 'index']); 
-    Route::get('/{id}' , [UserController::class , 'show']); 
-    Route::post('' , [UserController::class , 'store']); 
-    Route::post('/update/{id}' , [UserController::class , 'update']); 
-    Route::delete('/{id}' , [UserController::class , 'destroy']); 
-});
-Route::prefix('/restaurant-category')->group(function () {
-    Route::get('/' , [RestaurantCategoriesController::class , 'index']); 
-    Route::get('/{id}' , [RestaurantCategoriesController::class , 'show']); 
-    Route::post('' , [RestaurantCategoriesController::class , 'store']); 
-    Route::post('/update/{id}' , [RestaurantCategoriesController::class , 'update']); 
-    Route::delete('/{id}' , [RestaurantCategoriesController::class , 'destroy']); 
-});
-Route::prefix('/restaurant')->group(function () {
-    Route::get('/' , [ResturantController::class , 'index']); 
-    Route::get('/{id}' , [ResturantController::class , 'show']); 
-    Route::post('' , [ResturantController::class , 'store']); 
-    Route::post('/update/{id}' , [ResturantController::class , 'update']); 
-    Route::delete('/{id}' , [ResturantController::class , 'destroy']); 
-    //filters
-    Route::get('/filter-by-category/{id}' , [ResturantController::class , 'filterByCategory']); 
-});
-Route::prefix('/product-category')->group(function () {
-    Route::get('/' , [ProductCategoryController::class , 'index']); 
-    Route::get('/{id}' , [ProductCategoryController::class , 'show']); 
-    Route::post('' , [ProductCategoryController::class , 'store']); 
-    Route::post('/update/{id}' , [ProductCategoryController::class , 'update']); 
-    Route::delete('/{id}' , [ProductCategoryController::class , 'destroy']); 
-});
-Route::prefix('/product')->group(function () {
-    Route::get('/' , [ProductController::class , 'index']); 
-    Route::get('/{id}' , [ProductController::class , 'show']); 
-    Route::post('' , [ProductController::class , 'store']); 
-    Route::post('/update/{id}' , [ProductController::class , 'update']); 
-    Route::delete('/{id}' , [ProductController::class , 'destroy']); 
-    //filters
-    Route::get('/filter-by-category/{id}' , [ProductController::class , 'filterByCategory']); 
-    Route::get('/filter-by-restaurant/{id}' , [ProductController::class , 'filterByRestaurant']); 
-    Route::get('/filter-by-category/{category_id}/and-restaurant/{restaurant_id}' , [ProductController::class , 'filterByCategoryAndRestaurant']); 
-});
+    //RESTAURANTS CATEGORIES
+    Route::prefix('/restaurant')->group(function () {
+        Route::get('/', [ResturantController::class, 'index']);
+        Route::get('/{id}', [ResturantController::class, 'show']);
+        Route::middleware(['auth:sanctum' , 'abilities:admin'])->group(function () {
+            Route::post('', [ResturantController::class, 'store']);
+            Route::post('/update/{id}', [ResturantController::class, 'update']);
+            Route::delete('/{id}', [ResturantController::class, 'destroy']);
+        });
+        //filters
+        Route::get('/filter-by-category/{id}', [ResturantController::class, 'filterByCategory']);
+    });
 
-Route::prefix('/order')->group(function () {
-    Route::get('/' , [OrderController::class , 'index']); 
-    Route::get('/{id}' , [OrderController::class , 'show']); 
-    Route::post('' , [OrderController::class , 'store']); 
-    // Route::post('/update/{id}' , [OrderController::class , 'update']); 
-    Route::delete('/{id}' , [OrderController::class , 'destroy']); 
-    //filters 
-    Route::get('/filter-by-user/{id}' , [OrderController::class , 'filterByUser']); 
+    //PRODUCTS CATEGORIES
+    Route::prefix('/product-category')->group(function () {
+        Route::get('/', [ProductCategoryController::class, 'index']);
+        Route::get('/{id}', [ProductCategoryController::class, 'show']);
+        Route::middleware(['auth:sanctum' , 'abilities:admin'])->group(function () {
+            Route::post('', [ProductCategoryController::class, 'store']);
+            Route::post('/update/{id}', [ProductCategoryController::class, 'update']);
+            Route::delete('/{id}', [ProductCategoryController::class, 'destroy']);
+        });
+    });
+
+    //PRODUCTS 
+    Route::prefix('/product')->group(function () {
+        Route::get('/', [ProductController::class, 'index']);
+        Route::get('/{id}', [ProductController::class, 'show']);
+        Route::middleware(['auth:sanctum' , 'abilities:admin'])->group(function () {
+            Route::post('', [ProductController::class, 'store']);
+            Route::post('/update/{id}', [ProductController::class, 'update']);
+            Route::delete('/{id}', [ProductController::class, 'destroy']);
+        });
+        //filters
+        Route::get('/filter-by-category/{id}', [ProductController::class, 'filterByCategory']);
+        Route::get('/filter-by-restaurant/{id}', [ProductController::class, 'filterByRestaurant']);
+        Route::get('/filter-by-category/{category_id}/and-restaurant/{restaurant_id}', [ProductController::class, 'filterByCategoryAndRestaurant']);
+    });
+
+    //ORDERS
+    Route::prefix('/order')->group(function () {
+        Route::get('/', [OrderController::class, 'index']);
+        Route::get('/{id}', [OrderController::class, 'show']);
+        Route::post('', [OrderController::class, 'store']);
+        Route::delete('/{id}', [OrderController::class, 'destroy']);
+        //filters 
+        Route::get('/filter-by-user/{id}', [OrderController::class, 'filterByUser']);
+    });
+
+    //AUTH
+    Route::prefix('/auth')->group(function () {
+        Route::post('/login', [AuthController::class, 'login']);
+    });
+
 });

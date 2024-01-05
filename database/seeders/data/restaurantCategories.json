@@ -1,0 +1,22 @@
+[
+    {
+      "name": "Sea food Restaurants",
+      "image": "restaurant_category_image_1.jpeg"
+    },
+    {
+      "name": "Grill Restaurant",
+      "image": "restaurant_category_image_2.jpeg"
+    },
+    {
+      "name": "Pizza Restaurants",
+      "image": "restaurant_category_image_3.jpeg"
+    },
+    {
+      "name": "Fast food Restaurants",
+      "image": "restaurant_category_image_4.jpeg"
+    },
+    {
+      "name": "Family Restaurants",
+      "image": "restaurant_category_image_5.jpeg"
+    }
+  ]
