@@ -26,7 +26,7 @@ Route::middleware(['json.response',])->group(function () {
         Route::get('/', [UserController::class, 'index']);
         Route::get('/{id}', [UserController::class, 'show']);
         Route::post('', [UserController::class, 'store']);
-        Route::post('/update/{id}', [UserController::class, 'update']);
+        Route::post('/update/{id}', [UserController::class, 'update'])->middleware(['auth:sanctum' , 'abilities:admin']);
         Route::delete('/{id}', [UserController::class, 'destroy'])->middleware(['auth:sanctum' , 'abilities:admin']); //accress by admin only
     });
 
@@ -85,6 +85,7 @@ Route::middleware(['json.response',])->group(function () {
         Route::get('/', [OrderController::class, 'index']);
         Route::get('/{id}', [OrderController::class, 'show']);
         Route::post('', [OrderController::class, 'store']);
+        Route::post('/update/{id}', [OrderController::class, 'update']);
         Route::delete('/{id}', [OrderController::class, 'destroy']);
         //filters 
         Route::get('/filter-by-user/{id}', [OrderController::class, 'filterByUser']);

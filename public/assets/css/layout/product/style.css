@@ -1,0 +1,13 @@
+
+.button {
+    color: black;
+    border: 1px solid black ;
+    padding: 8px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.button-selected {
+    color: white;
+    background-color: blue;
+}

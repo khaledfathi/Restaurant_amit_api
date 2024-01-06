@@ -6,10 +6,24 @@ use App\Repository\contracts\HistoryOrderRepositoryContract;
 class HistoryOrderRepository implements HistoryOrderRepositoryContract {
 
     function index(){
-        return HistoryOrdersModel::get(); 
+        return HistoryOrdersModel::leftJoin('users', 'users.id' , '=','history_orders.user_id')->select(
+            'history_orders.id',
+            'history_orders.user_id',
+            'users.name as user_name',
+            'history_orders.status',
+            'history_orders.time',
+            'history_orders.total',
+        )->get(); 
     }
     function show (int $id){
-        return HistoryOrdersModel::where('id' , $id)->first(); 
+        return HistoryOrdersModel::leftJoin('users', 'users.id' , '=','history_orders.user_id')->select(
+            'history_orders.id',
+            'history_orders.user_id',
+            'users.name as user_name',
+            'history_orders.status',
+            'history_orders.time',
+            'history_orders.total',
+        )->where('history_orders.id' , $id)->first(); 
     }
     function store (array $data){
         //store new record
@@ -30,6 +44,13 @@ class HistoryOrderRepository implements HistoryOrderRepositoryContract {
     //FILTERS
     
     public function filterByUserId(int $id){
-        return HistoryOrdersModel::where('user_id', $id)->get(); 
+         return HistoryOrdersModel::leftJoin('users', 'users.id' , '=','history_orders.user_id')->select(
+            'history_orders.id',
+            'history_orders.user_id',
+            'users.name as user_name',
+            'history_orders.status',
+            'history_orders.time',
+            'history_orders.total',
+        )->where('user_id', $id)->get(); 
     }
 }

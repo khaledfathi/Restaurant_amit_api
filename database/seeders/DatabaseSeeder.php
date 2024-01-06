@@ -42,14 +42,14 @@ class DatabaseSeeder extends Seeder
         }
 
         //product categories 
-        $json = File::get("database/seeders/data/productCategories.json");         
-        $productCategories = json_decode($json); 
-        foreach ($productCategories as $productCategorie) {
-            \App\Models\RestaurantCategoryModel::create([
-                'name' => $productCategorie->name,
-                'image' => $productCategorie->image,
-            ]);
-        }
+        // $json = File::get("database/seeders/data/productCategories.json");         
+        // $productCategories = json_decode($json); 
+        // foreach ($productCategories as $productCategorie) {
+        //     \App\Models\RestaurantCategoryModel::create([
+        //         'name' => $productCategorie->name,
+        //         'image' => $productCategorie->image,
+        //     ]);
+        // }
 
     }
 }

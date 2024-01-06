@@ -1,32 +1,453 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Amit Restaurant API</title>
-</head>
-<body>
-    <h1>Amit Restaurant API</h1>
+@extends('layout.main')
+@section('tite', 'APIs')
+@section('active-api', 'selected')
+@section('links')
+    <link rel="stylesheet" href="">
+@endsection
+
+@section('content')
+    {{-- Auth API --}}
+    <h3>Auth APIs</h3>
+    <div class="table-container">
+        <table class="table" style="width:1000px">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Actoin</th>
+                    <th>Method</th>
+                    <th>Content-Type</th>
+                    <th>Authorized</th>
+                    <th>Exaample</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/auth/login</td>
+                    <td>user login</td>
+                    <td>POST</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="{{url(route('example.authLogin'))}}" >show Example</a></td>
+                </tr>
+           </tbody>
+        </table>
+    </div>
     <hr>
-    <h4>For Test </h4>
-    <a href="{{url('/')}}/api/user">List of users</a><br><br>
+    {{-- ----------------- --}}
 
-    <a href="{{url('/')}}/api/restaurant-category">List of Restaurant categories</a><br>
-    <a href="{{url('/')}}/api/restaurant">List of Restaurants</a><br>
-    {{-- restaurant filters --}}
-    <a href="{{url('/')}}/api/restaurant/filter-by-category/1">filter restaurants by category id {id = 1}</a><br>
-    <a href="{{url('/')}}/api/restaurant/filter-by-category/2">filter resturant by category id {id = 2}</a><br><br>
+    {{-- Users API --}}
+    <h3>Users APIs</h3>
+    <div class="table-container">
+        <table class="table" style="width:1000px">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Actoin</th>
+                    <th>Method</th>
+                    <th>Content-Type</th>
+                    <th>Authorized</th>
+                    <th>Exaample</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/user</td>
+                    <td>list all users</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="{{url(route('example.userList'))}}" >show Example</a></td>
+                </tr>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/user/{id}</td>
+                    <td>find user by id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="{{url(route('example.userSingle'))}}" >show Example</a></td>
+                </tr>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/user</td>
+                    <td>create new user</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>any</td>
+                    <td><a href="{{url(route('example.userCreate'))}}" >show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/user/update/{id}</td>
+                    <td>update user</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="{{url(route('example.userUpdate'))}}" >show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/user/{id}</td>
+                    <td>delete user</td>
+                    <td>DELTE</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="{{url(route('example.userDelete'))}}" >show Example</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Note: admin@mail.com is protected from deleting or updateing</p>
+    <hr>
+    {{-- ----------------- --}}
 
+    {{-- Restaurant Categories API --}}
+    <h3>Restaurant Categories APIs</h3>
+    <div class="table-container">
+        <table class="table" style="width:1230px">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Actoin</th>
+                    <th>Method</th>
+                    <th>Content-Type</th>
+                    <th>Authorized</th>
+                    <th>Exaample</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/restaurant-category</td>
+                    <td>list all restaurant categories</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="{{url(route('example.restaurantCategoryList'))}}" >show Example</a></td>
+                </tr>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/restaurant-category/{id}</td>
+                    <td>find restaurant category by id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="{{url(route('example.restaurantCategorySingle'))}}" >show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/restaurant-category</td>
+                    <td>create new restaurant category</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="{{url(route('example.restaurantCategoryCreate'))}}" >show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/restaurant-category/update/{id}</td>
+                    <td>update restaurant category</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="{{url(route('example.restaurantCategoryUpdate'))}}" >show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/restaurant-category/{id}</td>
+                    <td>delete restaurant category</td>
+                    <td>DELTE</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="{{url(route('example.restaurantCategoryDelete'))}}" >show Example</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    {{-- ----------------- --}}
 
-    <a href="{{url('/')}}/api/product-category">List of Product categories</a><br>
-    <a href="{{url('/')}}/api/product">List of Products</a><br><br>
-    {{-- product filters --}}
-    <a href="{{url('/')}}/api/product/filter-by-category/1">filter Products by category id {id = 1}</a><br>
-    <a href="{{url('/')}}/api/product/filter-by-category/2">filter Products by category id {id = 2}</a><br>
-    <a href="{{url('/')}}/api/product/filter-by-restaurant/1">filter Products by restaurant id {id = 1}</a><br>
-    <a href="{{url('/')}}/api/product/filter-by-restaurant/2">filter Products by restaurant id {id = 2}</a><br>
-    <a href="{{url('/')}}/api/product/filter-by-category/1/and-restaurant/1">filter Products by category and restaurant id {category = 1 , restaurant= 1}</a><br>
-    <a href="{{url('/')}}/api/product/filter-by-category/1/and-restaurant/2">filter Products by category and restaurant id {category = 1 , restaurant= 2}</a><br>
-</body>
-</html>
+    {{-- Restaurant API --}}
+    <h3>Restaurant APIs</h3>
+    <div class="table-container">
+        <table class="table" style="width:1350px">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Actoin</th>
+                    <th>Method</th>
+                    <th>Content-Type</th>
+                    <th>Authorized</th>
+                    <th>Exaample</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/restaurant</td>
+                    <td>list all restaurants</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/restaurant/{id}</td>
+                    <td>find restaurant by id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/restaurant</td>
+                    <td>create new restaurant</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/restaurant/update/{id}</td>
+                    <td>update restaurant category</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/restaurant/{id}</td>
+                    <td>delete restaurant</td>
+                    <td>DELTE</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="filter">
+                    <td>{{ url('') }}/api/restaurant/filter-by-category/{id}</td>
+                    <td>filter restaurant by restaurant category id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <p>Note: if restaurant category deleted , so all restaurants belong to it will be delete </p>
+    <hr>
+    {{-- ----------------- --}}
+
+    {{-- Product Categories API --}}
+    <h3>Product Categories APIs</h3>
+    <div class="table-container">
+        <table class="table" style="width:1200px">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Actoin</th>
+                    <th>Method</th>
+                    <th>Content-Type</th>
+                    <th>Authorized</th>
+                    <th>Exaample</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/product-category</td>
+                    <td>list all product categories</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/product-category/{id}</td>
+                    <td>find product category by id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/product-category</td>
+                    <td>create new product category</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/product-category/update/{id}</td>
+                    <td>update product category</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/product-category/{id}</td>
+                    <td>delete product category</td>
+                    <td>DELTE</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    {{-- ----------------- --}}
+
+    {{-- Products API --}}
+    <h3>Product APIs</h3>
+    <div class="table-container">
+        <table class="table" style="width:1750px">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Actoin</th>
+                    <th>Method</th>
+                    <th>Content-Type</th>
+                    <th>Authorized</th>
+                    <th>Exaample</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/product</td>
+                    <td>list all products</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/product/{id}</td>
+                    <td>find product by id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/product</td>
+                    <td>create new product</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/product/update/{id}</td>
+                    <td>update product category</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/product/{id}</td>
+                    <td>delete product</td>
+                    <td>DELTE</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="filter">
+                    <td>{{ url('') }}/api/product/filter-by-category/{id}</td>
+                    <td>filter product by product category id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="filter">
+                    <td>{{ url('') }}/api/product/filter-by-restaurant/{id}</td>
+                    <td>filter product by restaurant id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="filter">
+                    <td>{{ url('') }}/api/product/filter-by-category/{category_id}/and-restaurant/{restaurant_id}</td>
+                    <td>filter product by product category id and restaurant id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <p>Note: if product category deleted , so all products belong to it will be delete </p>
+    <hr>
+    {{-- ----------------- --}}
+
+    {{-- Order API --}}
+    <h3>Order APIs</h3>
+    <div class="table-container">
+        <table class="table" style="width:1100px">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Actoin</th>
+                    <th>Method</th>
+                    <th>Content-Type</th>
+                    <th>Authorized</th>
+                    <th>Exaample</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/order</td>
+                    <td>list all order</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="not-protect">
+                    <td>{{ url('') }}/api/order/{id}</td>
+                    <td>find order by id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="protect">
+                    <td>{{ url('') }}/api/order</td>
+                    <td>create new order</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>admin only</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+                <tr class="disabled">
+                    <td>{{ url('') }}/api/order/update/{id}</td>
+                    <td>update order</td>
+                    <td>POST</td>
+                    <td>form-data</td>
+                    <td>disabled</td>
+                    {{-- <td><a href="">show Example</a></td> --}}
+                    <td>---</td>
+                </tr>
+                <tr class="disabled">
+                    <td>{{ url('') }}/api/order/{id}</td>
+                    <td>delete order</td>
+                    <td>DELTE</td>
+                    <td>form-data</td>
+                    <td>disabled</td>
+                    {{-- <td><a href="">show Example</a></td> --}}
+                    <td>---</td>
+                </tr>
+                <tr class="filter">
+                    <td>{{ url('') }}/api/order/filter-by-user/{id}</td>
+                    <td>filter order by user id</td>
+                    <td>GET</td>
+                    <td>---</td>
+                    <td>any</td>
+                    <td><a href="">show Example</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Note: if product category deleted , so all products belong to it will be delete </p>
+    <hr><br>
+    <br><br><br><br>
+    {{-- ----------------- --}}
+
+@endsection

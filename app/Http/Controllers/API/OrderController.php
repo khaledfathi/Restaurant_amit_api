@@ -153,8 +153,9 @@ class OrderController extends Controller
     // /**
     //  * Update the specified resource in storage.
     //  */
-    public function update(Request $request)
+    public function update(IdRequest $request)
     {
+        return response()->json(['message' =>'this service is disabled by server\'s admin']); 
     }
 
     // /**
@@ -162,11 +163,12 @@ class OrderController extends Controller
     //  */
     public function destroy(IdRequest $request)
     {
-        $found = $this->historyOrderProvider->destroy($request->id);
-        if ($found) {
-            return response()->json(['operation' => true]);
-        }
-        return response()->json(['operation' => false, 'msg' => "user not found"]);
+        return response()->json(['message' =>'this service is disabled by server\'s admin']); 
+        // $found = $this->historyOrderProvider->destroy($request->id);
+        // if ($found) {
+        //     return response()->json(['operation' => true]);
+        // }
+        // return response()->json(['operation' => false, 'msg' => "user not found"]);
     }
 
     //filters 
@@ -180,6 +182,7 @@ class OrderController extends Controller
             $record = [
                 'id'=>$historyOrder->id,
                 'user_id'=>$historyOrder->user_id,
+                'user_name'=>$historyOrder->user_name,
                 'status'=>$historyOrder->status,
                 'time'=>$historyOrder->time,
                 'total'=>$historyOrder->total, 
