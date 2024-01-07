@@ -1,7 +1,9 @@
 @extends('order.layout')
 @section('content')
     <br>
-    <table class="table">
+   <div class="table-container">
+    </div> 
+    <table class="table" style="min-width:1000px">
         <thead>
             <tr>
                 <th>ID</th>

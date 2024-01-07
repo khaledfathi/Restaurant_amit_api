@@ -1,0 +1,98 @@
+[
+  {
+    "product_category_id": 1,
+    "restaurant_id": 1,
+    "name": "test product 1.1 AA",
+    "quantity": 32,
+    "price": 20,
+    "discount": 5
+  },
+  {
+    "product_category_id": 1,
+    "restaurant_id": 1,
+    "name": "test product 1.1 AB",
+    "quantity": 100,
+    "price": 40,
+    "discount": 10
+  },
+  {
+    "product_category_id": 1,
+    "restaurant_id": 1,
+    "name": "test product 1.1 AC",
+    "quantity": 80,
+    "price": 60,
+    "discount": 10
+  },
+  {
+    "product_category_id": 2,
+    "restaurant_id": 1,
+    "name": "test product 1.2 AA",
+    "quantity": 44,
+    "price": 120,
+    "discount": 0
+  },
+  {
+    "product_category_id": 2,
+    "restaurant_id": 1,
+    "name": "test product 1.2 AB",
+    "quantity": 44,
+    "price": 10,
+    "discount": 0
+  },
+  {
+    "product_category_id": 2,
+    "restaurant_id": 1,
+    "name": "test product 1.2 AC",
+    "quantity": 35,
+    "price": 95,
+    "discount": 20
+  },
+  {
+    "product_category_id": 1,
+    "restaurant_id": 2,
+    "name": "test product 2.1 AA",
+    "quantity": 5,
+    "price": 100,
+    "discount": 15
+  },
+  {
+    "product_category_id": 1,
+    "restaurant_id": 2,
+    "name": "test product 2.1 AB",
+    "quantity": 20,
+    "price": 10,
+    "discount": 0
+  },
+  {
+    "product_category_id": 1,
+    "restaurant_id": 2,
+    "name": "test product 2.1 AC",
+    "quantity": 99,
+    "price": 150,
+    "discount": 30
+  },
+  {
+    "product_category_id": 2,
+    "restaurant_id": 2,
+    "name": "test product 2.2 AA",
+    "quantity": 120,
+    "price": 75,
+    "discount": 0
+  },
+  {
+    "product_category_id": 2,
+    "restaurant_id": 2,
+    "name": "test product 2.2 AB",
+    "quantity": 200,
+    "price": 9,
+    "discount": 0
+  },
+  {
+    "product_category_id": 2,
+    "restaurant_id": 2,
+    "name": "test product 2.2 AC",
+    "quantity": 100,
+    "price": 42,
+    "discount": 10
+  }
+]

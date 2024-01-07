@@ -2,7 +2,8 @@
 @section('categories-selected', 'button-selected')
 
 @section('subContent')
-    <table class="table">
+<div class="table-container">
+    <table class="table" style="min-width:500px">
         <thead>
             <tr>
                 <th>ID</th>
@@ -23,4 +24,5 @@
         </tbody>
     </table>
 
+</div>
 @endsection

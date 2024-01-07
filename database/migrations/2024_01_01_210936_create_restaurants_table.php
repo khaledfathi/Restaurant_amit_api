@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name', 255)->nullable(false)->unique();
             $table->string('phone', 255)->nullable();
-            $table->text('address')->nullable();
+            $table->text('address')->nullable(false)->default(DEFAULT_RESTAURANT_IMAGE);
             $table->text('image')->nullable();
             $table->double('lat')->nullable();
             $table->double('long')->nullable();
