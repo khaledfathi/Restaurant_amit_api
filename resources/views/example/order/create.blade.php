@@ -5,7 +5,18 @@
 <div class="box">
 <h4>Request</h4>
 <pre>
-{ 
+{
+    "user_id": 1 , 
+    "products": [
+        {
+            "product_id": 4, 
+            "quantity": 4
+        },
+        {
+            "product_id": 6, 
+            "quantity": 1
+        }        
+    ]
 }
 </pre>
 </div>
@@ -14,35 +25,35 @@
 <h4>Response</h4>
 <pre>
 {
-    "id": 8,
+    "id": 2,
     "user_id": 1,
     "status": "in progress",
-    "time": "2024-01-07 00:44:25",
-    "total": 213.97,
+    "time": "2024-01-07 21:15:02",
+    "total": 555,
     "products": [
         {
-            "order_id": 8,
-            "product_id": 1,
-            "product_name": "product a1",
+            "order_id": 2,
+            "product_id": 4,
+            "product_name": "test product 1.2 AA",
             "restaurant_id": 1,
-            "restaurant_name": "rest name",
-            "quantity": 3,
-            "price": 12.99,
+            "restaurant_name": "Noble House",
+            "quantity": 4,
+            "price": 120,
             "discount": 0,
             "image": "http://localhost/storage/product_images/product_default_image.png",
-            "total": 38.97
+            "total": 480
         },
         {
-            "order_id": 8,
-            "product_id": 2,
-            "product_name": "product a2",
+            "order_id": 2,
+            "product_id": 6,
+            "product_name": "test product 1.2 AC",
             "restaurant_id": 1,
-            "restaurant_name": "rest name",
-            "quantity": 5,
-            "price": 35,
-            "discount": 0,
+            "restaurant_name": "Noble House",
+            "quantity": 1,
+            "price": 95,
+            "discount": 20,
             "image": "http://localhost/storage/product_images/product_default_image.png",
-            "total": 175
+            "total": 75
         }
     ]
 }

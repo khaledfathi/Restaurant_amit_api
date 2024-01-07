@@ -80,10 +80,10 @@ Route::group(['prefix'=>'/example'], function (){
     Route::get('product-filter-by-category-and-restaurant' , [ExampleController::class , 'productFilterByCategoryAndRestaurant'])->name('example.prodcutFilterByCategoryAndRestaurant');
    
     //order example
-    Route::get('order-single' , [ExampleController::class , 'orderList'])->name('example.orderList'); 
-    Route::get('order-create' , [ExampleController::class , 'orderSingle'])->name('example.orderSingle'); 
-    Route::get('order-update' , [ExampleController::class , 'orderCreate'])->name('example.orderCreate'); 
-    Route::get('order-delete' , [ExampleController::class , 'orderUpdate'])->name('example.orderUpdate');
+    Route::get('order-list' , [ExampleController::class , 'orderList'])->name('example.orderList'); 
+    Route::get('order-single' , [ExampleController::class , 'orderSingle'])->name('example.orderSingle'); 
+    Route::get('order-create' , [ExampleController::class , 'orderCreate'])->name('example.orderCreate'); 
+    Route::get('order-update' , [ExampleController::class , 'orderUpdate'])->name('example.orderUpdate');
     Route::get('order-delete' , [ExampleController::class , 'orderDelete'])->name('example.orderDelete');
     Route::get('order-filter-by-user' , [ExampleController::class , 'orderFilterByUser'])->name('example.orderFilterByUser');
 
