@@ -38,7 +38,7 @@
     {{-- Users API --}}
     <h3>Users APIs</h3>
     <div class="table-container">
-        <table class="table" style="width:1000px">
+        <table class="table" style="width:1200px">
             <thead>
                 <tr>
                     <th>URL</th>
@@ -100,7 +100,7 @@
     {{-- Restaurant Categories API --}}
     <h3>Restaurant Categories APIs</h3>
     <div class="table-container">
-        <table class="table" style="width:1230px">
+        <table class="table" style="width:1330px">
             <thead>
                 <tr>
                     <th>URL</th>
@@ -161,7 +161,7 @@
     {{-- Restaurant API --}}
     <h3>Restaurant APIs</h3>
     <div class="table-container">
-        <table class="table" style="width:1350px">
+        <table class="table" style="width:1450px">
             <thead>
                 <tr>
                     <th>URL</th>
@@ -232,7 +232,7 @@
     {{-- Product Categories API --}}
     <h3>Product Categories APIs</h3>
     <div class="table-container">
-        <table class="table" style="width:1200px">
+        <table class="table" style="width:1300px">
             <thead>
                 <tr>
                     <th>URL</th>
@@ -294,7 +294,7 @@
     {{-- Products API --}}
     <h3>Product APIs</h3>
     <div class="table-container">
-        <table class="table" style="width:1750px">
+        <table class="table" style="width:1850px">
             <thead>
                 <tr>
                     <th>URL</th>
