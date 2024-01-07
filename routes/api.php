@@ -82,7 +82,7 @@ Route::middleware(['json.response',])->group(function () {
 
     //ORDERS
     Route::prefix('/order')->group(function () {
-        Route::get('/', [OrderController::class, 'index']);
+        Route::get('', [OrderController::class, 'index']);
         Route::get('/{id}', [OrderController::class, 'show']);
         Route::post('', [OrderController::class, 'store']);
         Route::post('/update/{id}', [OrderController::class, 'update']);
