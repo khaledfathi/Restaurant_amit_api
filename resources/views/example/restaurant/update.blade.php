@@ -6,8 +6,8 @@
 <h4>Request</h4>
 <pre>
 {    
-    "name": "meat product "
-    "image": FILE
+    "name": "change good restaurant ",    
+    "phone": "0288998899888"     
 }
 </pre>
 </div>
@@ -16,9 +16,6 @@
 <h4>Response</h4>
 <pre>
 {
-    "id": 5,
-    "name": "meat product",
-    "image": "http://localhost/storage/product_category_images/product_category_default_image.png",
     "operation": true
 }
 </pre>

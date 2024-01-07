@@ -9,10 +9,10 @@
                 <th>Name</th>
                 <th>Category</th>
                 <th>Restaurant</th>
+                <th>Image</th>
                 <th>Quantity</th>
                 <th>Discount</th>
                 <th>Price</th>
-                <th>Image</th>
             </tr>
         </thead>
         <tbody>

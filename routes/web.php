@@ -37,26 +37,54 @@ Route::get('/fullDetails/{id}', [OrderController::class, 'fullDetails'])->name('
 
 
 Route::group(['prefix'=>'/example'], function (){
-    //auth
+    //auth example
     Route::get('auth-login' , [ExampleController::class , 'authLogin'])->name('example.authLogin'); 
 
-    //users
+    //users example
     Route::get('user-list' , [ExampleController::class , 'userList'])->name('example.userList'); 
     Route::get('user-single' , [ExampleController::class , 'userSingle'])->name('example.userSingle'); 
     Route::get('user-create' , [ExampleController::class , 'userCreate'])->name('example.userCreate'); 
     Route::get('user-update' , [ExampleController::class , 'userUpdate'])->name('example.userUpdate'); 
     Route::get('user-delete' , [ExampleController::class , 'userDelete'])->name('example.userDelete');
     
-    //restaurant category
+    //restaurant category example
     Route::get('restaurant-category-list' , [ExampleController::class , 'restaurantCategoryList'])->name('example.restaurantCategoryList'); 
     Route::get('restaurant-category-single' , [ExampleController::class , 'restaurantCategorySingle'])->name('example.restaurantCategorySingle'); 
     Route::get('restaurant-category-create' , [ExampleController::class , 'restaurantCategoryCreate'])->name('example.restaurantCategoryCreate'); 
     Route::get('restaurant-category-update' , [ExampleController::class , 'restaurantCategoryUpdate'])->name('example.restaurantCategoryUpdate'); 
     Route::get('restaurant-category-delete' , [ExampleController::class , 'restaurantCategoryDelete'])->name('example.restaurantCategoryDelete');
 
-    //product category
-    Route::get('product-category-list' , [ExampleController::class , 'ProductCategoryList'])->name('example.ProductCategoryList'); 
-    Route::get('product-category-single' , [ExampleController::class , 'productCategrySingle'])->name('example.prodcutCategorySingle'); 
-    Route::get('product-category-create' , [ExampleController::class , 'productCategryCreate'])->name('example.prodcutCategoryCreate'); 
-    Route::get('product-category-update' , [ExampleController::class , 'productCategryUpdate'])->name('example.prodcutCategoryUpdate'); 
-    Route::get('product-category-delete' , [ExampleController::class , 'productCategryDelete'])->name('example.prodcutCategoryDelete');}); 
+    //restaurant example
+    Route::get('restaurant-list' , [ExampleController::class , 'restaurantList'])->name('example.restaurantList'); 
+    Route::get('restaurant-single' , [ExampleController::class , 'restaurantSingle'])->name('example.restaurantSingle'); 
+    Route::get('restaurant-create' , [ExampleController::class , 'restaurantCreate'])->name('example.restaurantCreate'); 
+    Route::get('restaurant-update' , [ExampleController::class , 'restaurantUpdate'])->name('example.restaurantUpdate'); 
+    Route::get('restaurant-delete' , [ExampleController::class , 'restaurantDelete'])->name('example.restaurantDelete');
+    Route::get('restaurant-filter-by-category' , [ExampleController::class , 'restaurantFilterByCategory'])->name('example.restaurantFilterByCategory');
+
+    //product category example
+    Route::get('product-category-list' , [ExampleController::class , 'productCategoryList'])->name('example.productCategoryList'); 
+    Route::get('product-category-single' , [ExampleController::class , 'productCategorySingle'])->name('example.prodcutCategorySingle'); 
+    Route::get('product-category-create' , [ExampleController::class , 'productCategoryCreate'])->name('example.prodcutCategoryCreate'); 
+    Route::get('product-category-update' , [ExampleController::class , 'productCategoryUpdate'])->name('example.prodcutCategoryUpdate'); 
+    Route::get('product-category-delete' , [ExampleController::class , 'productCategoryDelete'])->name('example.prodcutCategoryDelete');
+
+    //product example
+    Route::get('product-list' , [ExampleController::class , 'productList'])->name('example.productList'); 
+    Route::get('product-single' , [ExampleController::class , 'productSingle'])->name('example.prodcutSingle'); 
+    Route::get('product-create' , [ExampleController::class , 'productCreate'])->name('example.prodcutCreate'); 
+    Route::get('product-update' , [ExampleController::class , 'productUpdate'])->name('example.prodcutUpdate'); 
+    Route::get('product-delete' , [ExampleController::class , 'productDelete'])->name('example.prodcutDelete');
+    Route::get('product-filter-by-category' , [ExampleController::class , 'productFilterByCategory'])->name('example.prodcutFilterByCategory');
+    Route::get('product-filter-by-restaurant' , [ExampleController::class , 'productFilterByRestaurant'])->name('example.prodcutFilterByRestaurant');
+    Route::get('product-filter-by-category-and-restaurant' , [ExampleController::class , 'productFilterByCategoryAndRestaurant'])->name('example.prodcutFilterByCategoryAndRestaurant');
+   
+    //order example
+    Route::get('order-single' , [ExampleController::class , 'orderList'])->name('example.orderList'); 
+    Route::get('order-create' , [ExampleController::class , 'orderSingle'])->name('example.orderSingle'); 
+    Route::get('order-update' , [ExampleController::class , 'orderCreate'])->name('example.orderCreate'); 
+    Route::get('order-delete' , [ExampleController::class , 'orderUpdate'])->name('example.orderUpdate');
+    Route::get('order-delete' , [ExampleController::class , 'orderDelete'])->name('example.orderDelete');
+    Route::get('order-filter-by-user' , [ExampleController::class , 'orderFilterByUser'])->name('example.orderFilterByUser');
+
+});

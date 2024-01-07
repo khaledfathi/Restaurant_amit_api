@@ -179,7 +179,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.restaurantList'))}}">show Example</a></td>
                 </tr>
                 <tr class="not-protect">
                     <td>{{ url('') }}/api/restaurant/{id}</td>
@@ -187,7 +187,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.restaurantSingle'))}}">show Example</a></td>
                 </tr>
                 <tr class="protect">
                     <td>{{ url('') }}/api/restaurant</td>
@@ -195,7 +195,7 @@
                     <td>POST</td>
                     <td>form-data</td>
                     <td>admin only</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.restaurantCreate'))}}">show Example</a></td>
                 </tr>
                 <tr class="protect">
                     <td>{{ url('') }}/api/restaurant/update/{id}</td>
@@ -203,7 +203,7 @@
                     <td>POST</td>
                     <td>form-data</td>
                     <td>admin only</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.restaurantUpdate'))}}">show Example</a></td>
                 </tr>
                 <tr class="protect">
                     <td>{{ url('') }}/api/restaurant/{id}</td>
@@ -211,7 +211,7 @@
                     <td>DELTE</td>
                     <td>form-data</td>
                     <td>admin only</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.restaurantDelete'))}}">show Example</a></td>
                 </tr>
                 <tr class="filter">
                     <td>{{ url('') }}/api/restaurant/filter-by-category/{id}</td>
@@ -219,7 +219,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.restaurantFilterByCategory'))}}">show Example</a></td>
                 </tr>
 
             </tbody>
@@ -250,7 +250,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.productCategoryList'))}}">show Example</a></td>
                 </tr>
                 <tr class="not-protect">
                     <td>{{ url('') }}/api/product-category/{id}</td>
@@ -258,7 +258,8 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutCategorySingle'))}}">show Example</a></td>
+                </tr>
                 </tr>
                 <tr class="protect">
                     <td>{{ url('') }}/api/product-category</td>
@@ -266,7 +267,7 @@
                     <td>POST</td>
                     <td>form-data</td>
                     <td>admin only</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutCategoryCreate'))}}">show Example</a></td>
                 </tr>
                 <tr class="protect">
                     <td>{{ url('') }}/api/product-category/update/{id}</td>
@@ -274,7 +275,7 @@
                     <td>POST</td>
                     <td>form-data</td>
                     <td>admin only</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutCategoryUpdate'))}}">show Example</a></td>
                 </tr>
                 <tr class="protect">
                     <td>{{ url('') }}/api/product-category/{id}</td>
@@ -282,7 +283,7 @@
                     <td>DELTE</td>
                     <td>form-data</td>
                     <td>admin only</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutCategoryDelete'))}}">show Example</a></td>
                 </tr>
             </tbody>
         </table>
@@ -311,7 +312,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.productList'))}}">show Example</a></td>
                 </tr>
                 <tr class="not-protect">
                     <td>{{ url('') }}/api/product/{id}</td>
@@ -319,7 +320,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutSingle'))}}">show Example</a></td>
                 </tr>
                 <tr class="protect">
                     <td>{{ url('') }}/api/product</td>
@@ -327,7 +328,7 @@
                     <td>POST</td>
                     <td>form-data</td>
                     <td>admin only</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutCreate'))}}">show Example</a></td>
                 </tr>
                 <tr class="protect">
                     <td>{{ url('') }}/api/product/update/{id}</td>
@@ -335,7 +336,7 @@
                     <td>POST</td>
                     <td>form-data</td>
                     <td>admin only</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutUpdate'))}}">show Example</a></td>
                 </tr>
                 <tr class="protect">
                     <td>{{ url('') }}/api/product/{id}</td>
@@ -343,7 +344,7 @@
                     <td>DELTE</td>
                     <td>form-data</td>
                     <td>admin only</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutDelete'))}}">show Example</a></td>
                 </tr>
                 <tr class="filter">
                     <td>{{ url('') }}/api/product/filter-by-category/{id}</td>
@@ -351,7 +352,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutFilterByCategory'))}}">show Example</a></td>
                 </tr>
                 <tr class="filter">
                     <td>{{ url('') }}/api/product/filter-by-restaurant/{id}</td>
@@ -359,7 +360,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutFilterByRestaurant'))}}">show Example</a></td>
                 </tr>
                 <tr class="filter">
                     <td>{{ url('') }}/api/product/filter-by-category/{category_id}/and-restaurant/{restaurant_id}</td>
@@ -367,7 +368,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.prodcutFilterByCategoryAndRestaurant'))}}">show Example</a></td>
                 </tr>
 
             </tbody>
@@ -398,7 +399,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.orderList'))}}">show Example</a></td>
                 </tr>
                 <tr class="not-protect">
                     <td>{{ url('') }}/api/order/{id}</td>
@@ -406,7 +407,7 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.orderSingle'))}}">show Example</a></td>
                 </tr>
                 <tr class="protect">
                     <td>{{ url('') }}/api/order</td>
@@ -414,7 +415,7 @@
                     <td>POST</td>
                     <td>form-data</td>
                     <td>admin only</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.orderCreate'))}}">show Example</a></td>
                 </tr>
                 <tr class="disabled">
                     <td>{{ url('') }}/api/order/update/{id}</td>
@@ -440,12 +441,11 @@
                     <td>GET</td>
                     <td>---</td>
                     <td>any</td>
-                    <td><a href="">show Example</a></td>
+                    <td><a href="{{url(route('example.orderFilterByUser'))}}">show Example</a></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <p>Note: if product category deleted , so all products belong to it will be delete </p>
     <hr><br>
     <br><br><br><br>
     {{-- ----------------- --}}

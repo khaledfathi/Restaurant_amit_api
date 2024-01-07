@@ -5,7 +5,8 @@
 <div class="box">
 <h4>Request</h4>
 <pre>
-{
+{    
+    "name": "new meat product "    
 }
 </pre>
 </div>

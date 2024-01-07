@@ -14,7 +14,9 @@
 <h4>Response</h4>
 <pre>
 {
-    "operation": true
+    "id": 1,
+    "name": "product cat 1",
+    "image": "http://localhost/storage/product_category_images/product_category_default_image.png"
 }
 </pre>
 </div>

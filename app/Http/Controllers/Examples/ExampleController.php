@@ -48,6 +48,27 @@ class ExampleController extends Controller
         return view('example.restaurantCategory.delete');
     }
     /********* -END- Restaurant Category API Examples **************/
+
+    /********* Restaurant API Examples **************/
+    function restaurantList(){
+        return view('example.restaurant.list');
+    }
+    function restaurantSingle(){
+        return view('example.restaurant.single');
+    }
+    function restaurantCreate(){
+        return view('example.restaurant.create');
+    }
+     function restaurantUpdate(){
+        return view('example.restaurant.update');
+    }
+   function restaurantDelete(){
+        return view('example.restaurant.delete');
+    }
+   function restaurantFilterByCategory(){
+        return view('example.restaurant.filterByCategory');
+    }
+    /********* -END- Restaurant API Examples **************/
    
     /********* Product Category API Examples **************/
     function productCategoryList(){
@@ -66,5 +87,53 @@ class ExampleController extends Controller
         return view('example.productCategory.delete');
     }
     /********* -END- Product Category API Examples **************/
+
+    /********* Product API Examples **************/
+    function productList(){
+        return view('example.product.list');
+    }
+    function productSingle(){
+        return view('example.product.single');
+    }
+    function productCreate(){
+        return view('example.product.create');
+    }
+     function productUpdate(){
+        return view('example.product.update');
+    }
+   function productDelete(){
+        return view('example.product.delete');
+    }
+   function productFilterByCategory(){
+        return view('example.product.filterByCategory');
+    }
+   function productFilterByRestaurant(){
+        return view('example.product.filterByRestaurant');
+    }
+   function productFilterByCategoryAndRestaurant(){
+        return view('example.product.filterByCategoryAndRestaurant');
+    }
+    /********* -END- Product API Examples **************/
+
+    /********* Order API Examples **************/
+    function orderList(){
+        return view('example.order.list');
+    }
+    function orderSingle(){
+        return view('example.order.single');
+    }
+    function orderCreate(){
+        return view('example.order.create');
+    }
+     function orderUpdate(){
+        return view('example.order.update');
+    }
+    function orderDelete(){
+        return view('example.order.delete');
+    }
+    function orderFilterByUser(){
+        return view('example.order.filterByUser');
+    }
+    /********* -END- Order API Examples **************/
 }
 

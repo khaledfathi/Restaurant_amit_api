@@ -119,7 +119,7 @@ class ProductController extends Controller
         return response()->json($record); 
     }
 
-    public function filterByRestaurant (Request $request){
+    public function filterByRestaurant (IdRequest $request){
         $record = $this->productProvider->filterByRestaurant($request->id);
         return response()->json($record); 
     }

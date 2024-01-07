@@ -41,7 +41,14 @@ class OrderController extends Controller
     public function index()
     {
         $records = $this->historyOrderProvider->index();
-        return response()->json($records);
+        $result = [];
+        $temp = []; 
+        foreach ($records as $key => $record) {            
+            $temp = $record; 
+            $temp['products'] = $this->historyOrderRequestsProvider->filterByOrderId($record->id); 
+            array_push ($result , $temp) ;             
+        }
+        return response()->json($result);
     }
 
     // /**
@@ -147,6 +154,9 @@ class OrderController extends Controller
     public function show(IdRequest $request)
     {
         $record = $this->historyOrderProvider->show($request->id);
+        if ($record){
+            $record['products'] = $this->historyOrderRequestsProvider->filterByOrderId($record->id); 
+        }
         return response()->json($record);
     }
 
