@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
                 "quantity" => $product->quantity,
                 "price" => $product->price,
                 "discount" => $product->discount ,
-                // "image"
+                "image" => $product->image ?? DEFAULT_PRODUCT_IMAGE
             ]);
         }
 

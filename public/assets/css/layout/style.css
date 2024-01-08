@@ -11,7 +11,13 @@ th , tr ,td , table {
     border: 1px solid black;
     border-collapse: collapse;
 }
+thead{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 /* End General */
+
 
 .page-link{
     text-decoration: none;
@@ -43,6 +49,7 @@ th , tr ,td , table {
 
 .table-container{
     overflow: scroll;
-    padding: 10px 0px;
+    margin: 10px 0px;
+    max-height: 500px;
 }
 

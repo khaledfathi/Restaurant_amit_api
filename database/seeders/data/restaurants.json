@@ -132,7 +132,7 @@
     "restaurant_category_id": 2,
     "name": "Al Khal",
     "address": "InterContinental Cairo Citystars Omar Bin Khattab Street, cairo",
-    "phone": 20224800009,
+    "phone": "20224800009",
     "lat": 30.07248570494805,
     "long": 31.34849734489415,
     "image": "restaurant_A_5.jpg"
@@ -145,7 +145,7 @@
     "restaurant_category_id": 3,
     "name": "Piccolo Mondo",
     "address": "Saray El Gezirah St Saray El Gezirah St., El-Khalig, Zamalek, Cairo",
-    "phone": 20227350174,
+    "phone": "20227350174",
     "lat": null,
     "long": null,
     "image": "restaurant_B_1.jpg"
@@ -154,7 +154,7 @@
     "restaurant_category_id": 3,
     "name": "Bellini Cocktail Lounge",
     "address": "InterContinental Cairo Citystars, In Hotel - Lobby Level Omar Ibn El Khattab St., Cairo",
-    "phone": 20224800009,
+    "phone": "20224800009",
     "lat": 30.072647513789573,
     "long": 31.346936653915694,
     "image": "restaurant_B_2.jpg"
@@ -163,7 +163,7 @@
     "restaurant_category_id": 3,
     "name": "Cucina",
     "address": "JW Marriott Hotel, Ring Road, Mirage City Ring Road - Mirage City, Cairo",
-    "phone": 20224115588,
+    "phone": "20224115588",
     "lat": 30.0728554323356,
     "long": 31.434966953900048,
     "image": "restaurant_B_3.jpg"
@@ -172,7 +172,7 @@
     "restaurant_category_id": 3,
     "name": "Leonardo Ristorante",
     "address": "Hilton Cairo Heliopolis Al Orouba Street, Heliopolis, Cairo",
-    "phone": 20222677730,
+    "phone": "20222677730",
     "lat": 30.105292453580144,
     "long": 31.36400524158334,
     "image": "restaurant_B_4.jpg"
@@ -181,7 +181,7 @@
     "restaurant_category_id": 3,
     "name": "Pane Vino",
     "address": "Corniche El Nile Semiramis Intercontinental Hotel, Cairo",
-    "phone": 20227988188,
+    "phone": "20227988188",
     "lat": 30.086967377663164,
     "long": 31.234334799910364,
     "image": "restaurant_B_5.jpg"
@@ -190,7 +190,7 @@
     "restaurant_category_id": 3,
     "name": "Lucca",
     "address": "Royal Maxim Palace Kempinski Cairo, First Settlement, New Cairo First Settlement, New Cairo, Cairo",
-    "phone": 201097111151,
+    "phone": "201097111151",
     "lat": 30.061135598654737,
     "long": 31.418258416977793,
     "image": "restaurant_B_6.jpg"

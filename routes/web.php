@@ -32,9 +32,10 @@ Route::group(['prefix' => '/product'], function () {
     Route::get('/category', [ProductController::class, 'categoryIndex'])->name('product.categoryIndex');
 
 });
-Route::get('/order', [OrderController::class, 'index'])->name('order.index');
-Route::get('/fullDetails/{id}', [OrderController::class, 'fullDetails'])->name('order.fullDetails');
-
+Route::group(['prefix'=>'/order'], function (){
+    Route::get('/', [OrderController::class, 'index'])->name('order.index');
+    Route::get('/full-details/{id}', [OrderController::class, 'fullDetails'])->name('order.fullDetails');
+}); 
 
 Route::group(['prefix'=>'/example'], function (){
     //auth example

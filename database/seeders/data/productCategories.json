@@ -1,8 +1,20 @@
 [
     {
-      "name": "Prodcut Category A1"
+      "name": "Seafood Type A"
     },
     {
-      "name": "Prodcut Category A2"
+      "name": "Seafood Type B"
+    },
+    {
+      "name": "Seafood Type C"
+    },
+    {
+      "name": "Seafood Type D"
+    },
+    {
+      "name": "Seafood Type E"
+    },
+    {
+      "name": "Seafood Type F"
     }
   ]

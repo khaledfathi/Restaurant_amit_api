@@ -1,98 +1,452 @@
 [
   {
+    "name": "Creamy Shrimp Pasta",
     "product_category_id": 1,
     "restaurant_id": 1,
-    "name": "test product 1.1 AA",
-    "quantity": 32,
-    "price": 20,
-    "discount": 5
-  },
-  {
-    "product_category_id": 1,
-    "restaurant_id": 1,
-    "name": "test product 1.1 AB",
+    "image": "product_1.jpg",
     "quantity": 100,
-    "price": 40,
-    "discount": 10
+    "discount": 0,
+    "price": 55
   },
   {
+    "name": "Tuscan Salamon",
     "product_category_id": 1,
     "restaurant_id": 1,
-    "name": "test product 1.1 AC",
-    "quantity": 80,
-    "price": 60,
-    "discount": 10
+    "image": "product_2.jpg",
+    "quantity": 100,
+    "discount": 12,
+    "price": 79.99
   },
   {
+    "name": "Baked Tilapia",
+    "product_category_id": 1,
+    "restaurant_id": 1,
+    "image": "product_3.jpg",
+    "quantity": 150,
+    "discount": 40,
+    "price": 300
+  },
+  {
+    "name": "Hony Garlic Shrimp",
     "product_category_id": 2,
     "restaurant_id": 1,
-    "name": "test product 1.2 AA",
-    "quantity": 44,
-    "price": 120,
-    "discount": 0
-  },
-  {
-    "product_category_id": 2,
-    "restaurant_id": 1,
-    "name": "test product 1.2 AB",
-    "quantity": 44,
-    "price": 10,
-    "discount": 0
-  },
-  {
-    "product_category_id": 2,
-    "restaurant_id": 1,
-    "name": "test product 1.2 AC",
-    "quantity": 35,
-    "price": 95,
-    "discount": 20
-  },
-  {
-    "product_category_id": 1,
-    "restaurant_id": 2,
-    "name": "test product 2.1 AA",
-    "quantity": 5,
-    "price": 100,
-    "discount": 15
-  },
-  {
-    "product_category_id": 1,
-    "restaurant_id": 2,
-    "name": "test product 2.1 AB",
-    "quantity": 20,
-    "price": 10,
-    "discount": 0
-  },
-  {
-    "product_category_id": 1,
-    "restaurant_id": 2,
-    "name": "test product 2.1 AC",
-    "quantity": 99,
-    "price": 150,
-    "discount": 30
-  },
-  {
-    "product_category_id": 2,
-    "restaurant_id": 2,
-    "name": "test product 2.2 AA",
-    "quantity": 120,
-    "price": 75,
-    "discount": 0
-  },
-  {
-    "product_category_id": 2,
-    "restaurant_id": 2,
-    "name": "test product 2.2 AB",
+    "image": "product_4.jpg",
     "quantity": 200,
-    "price": 9,
-    "discount": 0
+    "discount": 50,
+    "price": 200
   },
   {
+    "name": "Best Baked Salamon",
+    "product_category_id": 2,
+    "restaurant_id": 1,
+    "image": "product_5.jpg",
+    "quantity": 180,
+    "discount": 20,
+    "price": 120
+  },
+  {
+    "name": "Epic Fish Tacos",
     "product_category_id": 2,
     "restaurant_id": 2,
-    "name": "test product 2.2 AC",
+    "image": "product_6.jpg",
+    "quantity": 130,
+    "discount": 0,
+    "price": 200
+  },
+  {
+    "name": "Salmon Rice Crunch Bowl",
+    "product_category_id": 3,
+    "restaurant_id": 2,
+    "image": "product_7.jpg",
+    "quantity": 70,
+    "discount": 0,
+    "price": 170
+  },
+  {
+    "name": "Shrimp Scampi",
+    "product_category_id": 3,
+    "restaurant_id": 2,
+    "image": "product_8.jpg",
+    "quantity": 87,
+    "discount": 0,
+    "price": 230
+  },
+  {
+    "name": "Fried Tilapia",
+    "product_category_id": 3,
+    "restaurant_id": 2,
+    "image": "product_9.jpg",
+    "quantity": 200,
+    "discount": 30,
+    "price": 150
+  },
+  {
+    "name": "East Shrimp and Rice Skillet",
+    "product_category_id": 4,
+    "restaurant_id": 2,
+    "image": "product_10.jpg",
+    "quantity": 20,
+    "discount": 0,
+    "price": 100
+  },
+  {
+    "name": "Baked Halibut Recipe",
+    "product_category_id": 4,
+    "restaurant_id": 3,
+    "image": "product_11.jpg",
+    "quantity": 410,
+    "discount": 100,
+    "price": 500
+  },
+  {
+    "name": "Shrimp Stir Fry",
+    "product_category_id": 4,
+    "restaurant_id": 3,
+    "image": "product_12.jpg",
+    "quantity": 200,
+    "discount": 10,
+    "price": 100
+  },
+  {
+    "name": "Mediterranean Baked Fish",
+    "product_category_id": 5,
+    "restaurant_id": 3,
+    "image": "product_13.jpg",
+    "quantity": 43,
+    "discount": 20,
+    "price": 200
+  },
+  {
+    "name": "Easy Garlic Shrimp",
+    "product_category_id": 5,
+    "restaurant_id": 3,
+    "image": "product_14.jpg",
+    "quantity": 200,
+    "discount": 0,
+    "price": 240
+  },
+  {
+    "name": "Honey Glazed Salamon",
+    "product_category_id": 5,
+    "restaurant_id": 3,
+    "image": "product_15.jpg",
     "quantity": 100,
-    "price": 42,
-    "discount": 10
+    "discount": 50,
+    "price": 400
+  },
+  {
+    "name": "Shtimp Fra Diavolo",
+    "product_category_id": 6,
+    "restaurant_id": 4,
+    "image": "product_16.jpg",
+    "quantity": 300,
+    "discount": 100,
+    "price": 500
+  },
+  {
+    "name": "Parmeasan Crusted Tilapia",
+    "product_category_id": 6,
+    "restaurant_id": 4,
+    "image": "product_17.jpg",
+    "quantity": 100,
+    "discount": 0,
+    "price": 300
+  },
+  {
+    "name": "Blackened Salamon",
+    "product_category_id": 6,
+    "restaurant_id": 4,
+    "image": "product_18.jpg",
+    "quantity": 400,
+    "discount": 0,
+    "price": 20
+  },
+  {
+    "name": "Shimp Fried Rice",
+    "product_category_id": 1,
+    "restaurant_id": 4,
+    "image": "product_19.jpg",
+    "quantity": 300,
+    "discount": 60,
+    "price": 400
+  },
+  {
+    "name": "Pesto Salamon",
+    "product_category_id": 1,
+    "restaurant_id": 4,
+    "image": "product_20.jpg",
+    "quantity": 200,
+    "discount": 30,
+    "price": 110
+  },
+  {
+    "name": "Seafood Paella",
+    "product_category_id": 1,
+    "restaurant_id": 5,
+    "image": "product_21.jpg",
+    "quantity": 600,
+    "discount": 10,
+    "price": 20
+  },
+  {
+    "name": "Quick Broiled Salamon",
+    "product_category_id": 2,
+    "restaurant_id": 5,
+    "image": "product_22.jpg",
+    "quantity": 400,
+    "discount": 0,
+    "price": 600
+  },
+  {
+    "name": "Scallop Pasta With Lemon & Herbs",
+    "product_category_id": 2,
+    "restaurant_id": 5,
+    "image": "product_23.jpg",
+    "quantity": 100,
+    "discount": 200,
+    "price": 800
+  },
+  {
+    "name": "Poke Bowl",
+    "product_category_id": 2,
+    "restaurant_id": 5,
+    "image": "product_24.jpg",
+    "quantity": 500,
+    "discount": 20,
+    "price": 100
+  },
+  {
+    "name": "Easy Salamon Bites",
+    "product_category_id": 3,
+    "restaurant_id": 5,
+    "image": "product_25.jpg",
+    "quantity": 400,
+    "discount": 0,
+    "price": 43
+  },
+  {
+    "name": "Easy Mahi Mahi Recipe",
+    "product_category_id": 3,
+    "restaurant_id": 6,
+    "image": "product_26.jpg",
+    "quantity": 40,
+    "discount": 100,
+    "price": 600
+  },
+  {
+    "name": "Shrimp Burger",
+    "product_category_id": 3,
+    "restaurant_id": 6,
+    "image": "product_27.jpg",
+    "quantity": 200,
+    "discount": 10,
+    "price": 100
+  },
+  {
+    "name": "Easy Swordfish",
+    "product_category_id": 4,
+    "restaurant_id": 6,
+    "image": "product_28.jpg",
+    "quantity": 400,
+    "discount": 0,
+    "price": 100
+  },
+  {
+    "name": "Shrimp Nachos",
+    "product_category_id": 4,
+    "restaurant_id": 6,
+    "image": "product_29.jpg",
+    "quantity": 200,
+    "discount": 40,
+    "price": 500
+  },
+  {
+    "name": "Chilean Sea Bass",
+    "product_category_id": 4,
+    "restaurant_id": 6,
+    "image": "product_30.jpg",
+    "quantity": 500,
+    "discount": 40,
+    "price": 240
+  },
+  {
+    "name": "Lemon Dill Salamon",
+    "product_category_id": 5,
+    "restaurant_id": 7,
+    "image": "product_31.jpg",
+    "quantity": 200,
+    "discount": 13,
+    "price": 100
+  },
+  {
+    "name": "Shrimp Pesto Pasta",
+    "product_category_id": 5,
+    "restaurant_id": 7,
+    "image": "product_32.jpg",
+    "quantity": 431,
+    "discount": 100,
+    "price": 500
+  },
+  {
+    "name": "Poached Salamon",
+    "product_category_id": 5,
+    "restaurant_id": 7,
+    "image": "product_33.jpg",
+    "quantity": 800,
+    "discount": 10,
+    "price": 50
+  },
+  {
+    "name": "Easy Cajun Shrimp",
+    "product_category_id": 6,
+    "restaurant_id": 7,
+    "image": "product_34.jpg",
+    "quantity": 200,
+    "discount": 100,
+    "price": 400
+  },
+  {
+    "name": "Pan Fried Cod",
+    "product_category_id": 6,
+    "restaurant_id": 7,
+    "image": "product_35.jpg",
+    "quantity": 100,
+    "discount": 0,
+    "price": 54.99
+  },
+  {
+    "name": "Shrimp And Broccoli",
+    "product_category_id": 6,
+    "restaurant_id": 8,
+    "image": "product_36.jpg",
+    "quantity": 43,
+    "discount": 10,
+    "price": 100
+  },
+  {
+    "name": "Perfect Grilled Salamon",
+    "product_category_id": 1,
+    "restaurant_id": 8,
+    "image": "product_37.jpg",
+    "quantity": 32,
+    "discount": 100,
+    "price": 45
+  },
+  {
+    "name": "Pan Seared Scallop",
+    "product_category_id": 1,
+    "restaurant_id": 8,
+    "image": "product_38.jpg",
+    "quantity": 20,
+    "discount": 100,
+    "price": 324
+  },
+  {
+    "name": "Seared Ahi Tuna",
+    "product_category_id": 1,
+    "restaurant_id": 8,
+    "image": "product_39.jpg",
+    "quantity": 300,
+    "discount": 50,
+    "price": 400
+  },
+  {
+    "name": "Salamon With Capers",
+    "product_category_id": 2,
+    "restaurant_id": 8,
+    "image": "product_40.jpg",
+    "quantity": 32,
+    "discount": 0,
+    "price": 500
+  },
+  {
+    "name": "Shrimp Curry",
+    "product_category_id": 2,
+    "restaurant_id": 9,
+    "image": "product_41.jpg",
+    "quantity": 200,
+    "discount": 40,
+    "price": 500
+  },
+  {
+    "name": "Broiled Shrimp",
+    "product_category_id": 2,
+    "restaurant_id": 9,
+    "image": "product_42.jpg",
+    "quantity": 100,
+    "discount": 30,
+    "price": 500
+  },
+  {
+    "name": "Bourbon Glazed Salmon",
+    "product_category_id": 3,
+    "restaurant_id": 9,
+    "image": "product_43.jpg",
+    "quantity": 432,
+    "discount": 20,
+    "price": 900
+  },
+  {
+    "name": "Perfect Grilled Shrimp",
+    "product_category_id": 3,
+    "restaurant_id": 9,
+    "image": "product_44.jpg",
+    "quantity": 200,
+    "discount": 100,
+    "price": 40
+  },
+  {
+    "name": "Baked God With Magic Seasoning",
+    "product_category_id": 3,
+    "restaurant_id": 9,
+    "image": "product_45.jpg",
+    "quantity": 100,
+    "discount": 90,
+    "price": 400
+  },
+  {
+    "name": "cilantro Lime Shrimp",
+    "product_category_id": 4,
+    "restaurant_id": 10,
+    "image": "product_46.jpg",
+    "quantity": 1000,
+    "discount": 100,
+    "price": 800
+  },
+  {
+    "name": "Teriyaki Salmon",
+    "product_category_id": 4,
+    "restaurant_id": 10,
+    "image": "product_47.jpg",
+    "quantity": 400,
+    "discount": 90,
+    "price": 460
+  },
+  {
+    "name": "Quick Shrimp Tacos",
+    "product_category_id": 4,
+    "restaurant_id": 10,
+    "image": "product_48.jpg",
+    "quantity": 12,
+    "discount": 0,
+    "price": 100
+  },
+  {
+    "name": "BlackEnded Shrimp",
+    "product_category_id": 5,
+    "restaurant_id": 10,
+    "image": "product_49.jpg",
+    "quantity": 200,
+    "discount": 10,
+    "price": 400
+  },
+  {
+    "name": "Easy Grilled Tilapia",
+    "product_category_id": 5,
+    "restaurant_id": 10,
+    "image": "product_50.jpg",
+    "quantity": 900,
+    "discount": 70,
+    "price": 590
   }
 ]
