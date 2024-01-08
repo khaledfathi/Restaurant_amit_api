@@ -448,5 +448,596 @@
     "quantity": 900,
     "discount": 70,
     "price": 590
+  },
+
+
+
+
+  {
+    "name": "Honey Lime Grilled Corn",
+    "product_category_id": 7,
+    "restaurant_id": 11,
+    "image": "product_51.jpg",
+    "quantity": 100,
+    "discount": 0,
+    "price": 100
+  },
+  {
+    "name": "Chipotle Tofu & Pineapple Skewers",
+    "product_category_id": 7,
+    "restaurant_id": 11,
+    "image": "product_52.jpg",
+    "quantity": 20,
+    "discount": 100,
+    "price": 400
+  },
+  {
+    "name": "Jerk Shrimp & Pineapple Bowls",
+    "product_category_id": 7,
+    "restaurant_id": 11,
+    "image": "product_53.jpg",
+    "quantity": 1000,
+    "discount": 43,
+    "price": 34.99
+  },
+  {
+    "name": "Grilled Tomatoes",
+    "product_category_id": 8,
+    "restaurant_id": 11,
+    "image": "product_54.jpg",
+    "quantity": 100,
+    "discount": 32,
+    "price": 100
+  },
+  {
+    "name": "Grilled Beer Brats",
+    "product_category_id": 8,
+    "restaurant_id": 11,
+    "image": "product_55.jpg",
+    "quantity": 100,
+    "discount": 0,
+    "price": 500
+  },
+  {
+    "name": "Ribs On The Grill",
+    "product_category_id": 8,
+    "restaurant_id": 12,
+    "image": "product_56.jpg",
+    "quantity": 10,
+    "discount": 0,
+    "price": 360
+  },
+  {
+    "name": "Surf 'n' Turf Foil Packs",
+    "product_category_id": 9,
+    "restaurant_id": 12,
+    "image": "product_51.jpg",
+    "quantity": 100,
+    "discount": 70,
+    "price": 150
+  },
+  {
+    "name": "Grilled Green Tomatoes",
+    "product_category_id": 9,
+    "restaurant_id": 12,
+    "image": "product_57.jpg",
+    "quantity": 100,
+    "discount": 20,
+    "price": 32
+  },
+  {
+    "name": "Tex Mex Chicken Fajita Foil Packets",
+    "product_category_id": 9,
+    "restaurant_id": 12,
+    "image": "product_58.jpg",
+    "quantity": 1000,
+    "discount": 30,
+    "price": 100
+  },
+  {
+    "name": "Grilled Brie with Wine",
+    "product_category_id": 7,
+    "restaurant_id": 12,
+    "image": "product_59.jpg",
+    "quantity": 66,
+    "discount": 90,
+    "price": 500
+  },
+  {
+    "name": "Classic Burger",
+    "product_category_id": 7,
+    "restaurant_id": 13,
+    "image": "product_60.jpg",
+    "quantity": 10,
+    "discount": 0,
+    "price": 380
+  },
+  {
+    "name": "Spicy Coconut Grilled Chicken",
+    "product_category_id": 7,
+    "restaurant_id": 13,
+    "image": "product_61.jpg",
+    "quantity": 100,
+    "discount": 20,
+    "price": 60
+  },
+  {
+    "name": "Grilled Avocados",
+    "product_category_id": 8,
+    "restaurant_id": 13,
+    "image": "product_62.jpg",
+    "quantity": 10,
+    "discount": 0,
+    "price": 300
+  },
+  {
+    "name": "Bánh Mì Kebabs",
+    "product_category_id": 8,
+    "restaurant_id": 13,
+    "image": "product_63.jpg",
+    "quantity": 10,
+    "discount": 20,
+    "price": 460
+  },
+  {
+    "name": "Peach Balsamic Grilled Chicken",
+    "product_category_id": 8,
+    "restaurant_id": 13,
+    "image": "product_64.jpg",
+    "quantity": 800,
+    "discount": 150,
+    "price": 1000
+  },
+  {
+    "name": "Grilled Carrots",
+    "product_category_id": 9,
+    "restaurant_id": 14,
+    "image": "product_65.jpg",
+    "quantity": 30,
+    "discount": 100,
+    "price": 490
+  },
+  {
+    "name": "Grilled Chicken Kebabs",
+    "product_category_id": 9,
+    "restaurant_id": 14,
+    "image": "product_66.jpg",
+    "quantity": 700,
+    "discount": 20,
+    "price": 190
+  },
+  {
+    "name": "BBQ Tempeh Sandwiches",
+    "product_category_id": 9,
+    "restaurant_id": 14,
+    "image": "product_67.jpg",
+    "quantity": 1000,
+    "discount": 0,
+    "price": 100
+  },
+  {
+    "name": "Honey Soy Grilled Pork Chops",
+    "product_category_id": 7,
+    "restaurant_id": 14,
+    "image": "product_68.jpg",
+    "quantity": 950,
+    "discount": 120,
+    "price": 250
+  },
+  {
+    "name": "Grilled Peaches",
+    "product_category_id": 7,
+    "restaurant_id": 14,
+    "image": "product_69.jpg",
+    "quantity": 800,
+    "discount": 20,
+    "price": 170
+  },
+  {
+    "name": "Honey Mustard Chicken, Tomato, & Zucchini Foil Packs",
+    "product_category_id": 7,
+    "restaurant_id": 15,
+    "image": "product_70.jpg",
+    "quantity": 10,
+    "discount": 0,
+    "price": 700
+  },
+  {
+    "name": "Piri Piri Spatchcock Chicken",
+    "product_category_id": 8,
+    "restaurant_id": 15,
+    "image": "product_71.jpg",
+    "quantity": 100,
+    "discount": 30,
+    "price": 100
+  },
+  {
+    "name": "Grilled Corn",
+    "product_category_id": 8,
+    "restaurant_id": 15,
+    "image": "product_72.jpg",
+    "quantity": 100,
+    "discount": 30,
+    "price": 155
+  },
+  {
+    "name": "Thai-Inspired Grilled Cauliflower Steaks",
+    "product_category_id": 8,
+    "restaurant_id": 15,
+    "image": "product_73.jpg",
+    "quantity": 20,
+    "discount": 30,
+    "price": 590
+  },
+  {
+    "name": "Summer Panzanella",
+    "product_category_id": 9,
+    "restaurant_id": 15,
+    "image": "product_74.jpg",
+    "quantity": 600,
+    "discount": 50,
+    "price": 170
+  },
+  {
+    "name": "Mahi Mahi Tacos",
+    "product_category_id": 9,
+    "restaurant_id": 15,
+    "image": "product_75.jpg",
+    "quantity": 200,
+    "discount": 0,
+    "price": 400
+  },
+  {
+    "name": "Grilled Pizza",
+    "product_category_id": 7,
+    "restaurant_id": 15,
+    "image": "product_76.jpg",
+    "quantity": 100,
+    "discount": 20,
+    "price": 100
+  },
+  {
+    "name": "Grilled Short Ribs",
+    "product_category_id": 7,
+    "restaurant_id": 15,
+    "image": "product_77.jpg",
+    "quantity": 30,
+    "discount": 0,
+    "price": 10.99
+  },
+
+
+
+
+    {
+      "name": "Pizza Napoletana",
+      "product_category_id": 10,
+      "restaurant_id": 16,
+      "image": "product_79.jpg",
+      "quantity": 30,
+      "discount": 0,
+      "price": 100
+    },
+    {
+      "name": "Pizza Margherita",
+      "product_category_id": 10,
+      "restaurant_id": 16,
+      "image": "product_89.jpg",
+      "quantity": 100,
+      "discount": 0,
+      "price": 150
+    },
+    {
+      "name": "Pizza al toglio",
+      "product_category_id": 10,
+      "restaurant_id": 16,
+      "image": "product_81.jpg",
+      "quantity": 300,
+      "discount": 40,
+      "price": 140
+    },
+    {
+      "name": "Pizza Bufalina",
+      "product_category_id": 11,
+      "restaurant_id": 16,
+      "image": "product_82.jpg",
+      "quantity": 500,
+      "discount": 10,
+      "price": 90
+    },
+    {
+      "name": "Caprese Pizza",
+      "product_category_id": 11,
+      "restaurant_id": 16,
+      "image": "product_83.jpg",
+      "quantity": 1000,
+      "discount": 40,
+      "price": 170
+    },
+    {
+      "name": "Pizza quattro formaggi",
+      "product_category_id": 11,
+      "restaurant_id": 17,
+      "image": "product_84.jpg",
+      "quantity": 400,
+      "discount": 10,
+      "price": 100
+    },
+    {
+      "name": "Pizzette",
+      "product_category_id": 12,
+      "restaurant_id": 17,
+      "image": "product_85.jpg",
+      "quantity": 40,
+      "discount": 10,
+      "price": 200
+    },
+    {
+      "name": "Pizza alla diavola",
+      "product_category_id": 12,
+      "restaurant_id": 17,
+      "image": "product_86.jpg",
+      "quantity": 100,
+      "discount": 0,
+      "price": 210
+    },
+    {
+      "name": "Calzone Pizza",
+      "product_category_id": 12,
+      "restaurant_id": 17,
+      "image": "product_87.jpg",
+      "quantity": 300,
+      "discount": 50,
+      "price": 190
+    },
+    {
+      "name": "Pizza Capricciosa",
+      "product_category_id": 10,
+      "restaurant_id": 17,
+      "image": "product_88.jpg",
+      "quantity": 400,
+      "discount": 80,
+      "price": 400
+    },
+    {
+      "name": "Pizza ai funghi",
+      "product_category_id": 10,
+      "restaurant_id": 18,
+      "image": "product_89.jpg",
+      "quantity": 10,
+      "discount": 20,
+      "price": 140
+    },
+    {
+      "name": "pizza alpadellino",
+      "product_category_id": 10,
+      "restaurant_id": 18,
+      "image": "product_90.jpg",
+      "quantity": 100,
+      "discount": 0,
+      "price": 300
+    },
+    {
+      "name": "pinsa romana",
+      "product_category_id": 11,
+      "restaurant_id": 18,
+      "image": "product_91.jpg",
+      "quantity": 1000,
+      "discount": 0,
+      "price": 100
+    },
+    {
+      "name": "Prosciyttoe funghi pizza",
+      "product_category_id": 11,
+      "restaurant_id": 18,
+      "image": "product_92.jpg",
+      "quantity": 490,
+      "discount": 60,
+      "price": 400
+    },
+    {
+      "name": "Pizza alla pala",
+      "product_category_id": 11,
+      "restaurant_id": 18,
+      "image": "product_93.jpg",
+      "quantity": 100,
+      "discount": 90,
+      "price": 430
+    },
+    {
+      "name": "Pizza Romana",
+      "product_category_id": 12,
+      "restaurant_id": 19,
+      "image": "product_94.jpg",
+      "quantity": 100,
+      "discount": 0,
+      "price": 110
+    },
+    {
+      "name": "Pizza Prosciutto",
+      "product_category_id": 12,
+      "restaurant_id": 19,
+      "image": "product_95.jpg",
+      "quantity": 30,
+      "discount": 100,
+      "price": 400
+    },
+    {
+      "name": "Garlic fingers",
+      "product_category_id": 12,
+      "restaurant_id": 19,
+      "image": "product_96.jpg",
+      "quantity": 30,
+      "discount": 20,
+      "price": 100
+    },
+    {
+      "name": "Apizza",
+      "product_category_id": 10,
+      "restaurant_id": 19,
+      "image": "product_97.jpg",
+      "quantity": 900,
+      "discount": 30,
+      "price": 400
+    },
+    {
+      "name": "Pizza montanara",
+      "product_category_id": 10,
+      "restaurant_id": 19,
+      "image": "product_98.jpg",
+      "quantity": 10,
+      "discount": 0,
+      "price": 230
+    },
+    {
+      "name": "Pizza carrettiera",
+      "product_category_id": 10,
+      "restaurant_id": 20,
+      "image": "product_99.jpg",
+      "quantity": 20,
+      "discount": 100,
+      "price": 600
+    },
+    {
+      "name": "Pepperoni Pizza",
+      "product_category_id": 11,
+      "restaurant_id": 20,
+      "image": "product_100.jpg",
+      "quantity": 700,
+      "discount": 90,
+      "price": 200
+    },
+    {
+      "name": "Pizza Primavera",
+      "product_category_id": 11,
+      "restaurant_id": 20,
+      "image": "product_101.jpg",
+      "quantity": 100,
+      "discount": 0,
+      "price": 100
+    },
+    {
+      "name": "Newyrk style Pizza",
+      "product_category_id": 11,
+      "restaurant_id": 20,
+      "image": "product_102.jpg",
+      "quantity": 20,
+      "discount": 30,
+      "price": 280
+    },
+    {
+      "name": "quattro stagio pizza",
+      "product_category_id": 11,
+      "restaurant_id": 20,
+      "image": "product_103.jpg",
+      "quantity": 800,
+      "discount": 0,
+      "price": 500
+    },
+
+
+    {
+    "name": "Product Example A1",
+    "product_category_id": 13,
+    "restaurant_id": 22,
+    "image": null,
+    "quantity": 100,
+    "discount": 10,
+    "price": 100
+  },
+  {
+    "name": "Product Example A2",
+    "product_category_id": 13,
+    "restaurant_id": 23,
+    "image": null,
+    "quantity": 100,
+    "discount": 30,
+    "price": 240
+  },
+  {
+    "name": "Product Example A3",
+    "product_category_id": 13,
+    "restaurant_id": 24,
+    "image": null,
+    "quantity": 100,
+    "discount": 30,
+    "price": 240
+  },
+  {
+    "name": "Product Example A4",
+    "product_category_id": 13,
+    "restaurant_id": 25,
+    "image": null,
+    "quantity": 100,
+    "discount": 30,
+    "price": 240
+  },
+  {
+    "name": "Product Example A5",
+    "product_category_id": 13,
+    "restaurant_id": 26,
+    "image": null,
+    "quantity": 100,
+    "discount": 30,
+    "price": 240
+  },
+
+
+
+  {
+    "name": "Product Example B1",
+    "product_category_id": 14,
+    "restaurant_id": 27,
+    "image": null,
+    "quantity": 90,
+    "discount": 100,
+    "price": 800
+  },
+  {
+    "name": "Product Example B2",
+    "product_category_id": 14,
+    "restaurant_id": 28,
+    "image": null,
+    "quantity": 100,
+    "discount": 10,
+    "price": 340
+  },
+  {
+    "name": "Product Example B3",
+    "product_category_id": 14,
+    "restaurant_id": 29,
+    "image": null,
+    "quantity": 30,
+    "discount": 30,
+    "price": 200
+  },
+  {
+    "name": "Product Example B4",
+    "product_category_id": 14,
+    "restaurant_id": 30,
+    "image": null,
+    "quantity": 90,
+    "discount": 0,
+    "price": 240
+  },
+  {
+    "name": "Product Example B5",
+    "product_category_id": 14,
+    "restaurant_id": 31,
+    "image": null,
+    "quantity": 50,
+    "discount": 0,
+    "price": 100
+  },
+  {
+    "name": "Product Example B6",
+    "product_category_id": 14,
+    "restaurant_id": 32,
+    "image": null,
+    "quantity": 130,
+    "discount": 10,
+    "price": 220
   }
+  
+  
 ]
