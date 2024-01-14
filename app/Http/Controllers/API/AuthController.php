@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
 use App\Http\Controllers\Controller;
+use App\Models\User as UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -16,8 +17,13 @@ class AuthController extends Controller
             }else {
                 $token = $request->user()->createToken($request->email, ['normal']);
             }
-            return response()->json(['operation'=>true, 'token'=> $token->plainTextToken]);
-        }
-        return response()->json(['opertaion'=>false , 'msg'=>'invalid user name or password']); 
+            //get logedin user 
+            $query = 'SELECT name , email , CONCAT( ? , image) as image  FROM users WHERE email = ? '; 
+            $hydrateQury =  DB::select($query , [url('/').'/'.STORAGE_ROOT.'/'.USER_IMAGES_STORAGE.'/' , $request->email] ); 
+            $user = UserModel::hydrate($hydrateQury)->first(); 
+
+            return response()->json(['operation'=>true, 'token'=> $token->plainTextToken , 'user'=> $user]);
+        }        
+        return response()->json(['operation'=>false , 'msg'=>'invalid user name or password']); 
     }
 }
