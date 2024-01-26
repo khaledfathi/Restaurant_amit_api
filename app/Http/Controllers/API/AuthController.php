@@ -18,7 +18,7 @@ class AuthController extends Controller
                 $token = $request->user()->createToken($request->email, ['normal']);
             }
             //get logedin user 
-            $query = 'SELECT name , email , CONCAT( ? , image) as image  FROM users WHERE email = ? '; 
+            $query = 'SELECT id, name , email , CONCAT( ? , image) as image  FROM users WHERE email = ? '; 
             $hydrateQury =  DB::select($query , [url('/').'/'.STORAGE_ROOT.'/'.USER_IMAGES_STORAGE.'/' , $request->email] ); 
             $user = UserModel::hydrate($hydrateQury)->first(); 
 
